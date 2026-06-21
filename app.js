@@ -280,32 +280,69 @@ function updateCircle() {
 
 /* ══════════════ LOCATION ════════════════ */
 function requestLocation() {
-  if(!navigator.geolocation){toast('⚠️ Geolocation not supported');hideSplash();return;}
-  navigator.geolocation.getCurrentPosition(onLocOK, onLocErr, {enableHighAccuracy:true,timeout:12000,maximumAge:30000});
+  const locEl = document.getElementById('location-city');
+  if (locEl) locEl.textContent = 'Locating…';
+  if (!navigator.geolocation) { toast('⚠️ Geolocation not supported'); hideSplash(); return; }
+  // Use maximumAge:0 so we ALWAYS get a fresh GPS fix, not a cached one
+  navigator.geolocation.getCurrentPosition(onLocOK, onLocErrFallback,
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 });
 }
 function onLocOK(pos) {
-  S.lat=pos.coords.latitude; S.lon=pos.coords.longitude;
-  S.map.setView([S.lat,S.lon],15,{animate:true});
-  placeUserMarker(); reverseGeocode(S.lat,S.lon);
-  fetchWeather(S.lat,S.lon); loadPlaces(); updateCircle(); checkProximity();
-  // Track this user (only if consent given)
+  S.lat = pos.coords.latitude;
+  S.lon = pos.coords.longitude;
+  const acc = pos.coords.accuracy; // metres
+  S.map.setView([S.lat, S.lon], 16, { animate: true });
+  placeUserMarker(acc);
+  reverseGeocode(S.lat, S.lon);
+  fetchWeather(S.lat, S.lon); loadPlaces(); updateCircle(); checkProximity();
   if (window.NearMeTracker?.hasConsent()) {
     window.NearMeTracker.track(S.lat, S.lon, document.getElementById('location-city')?.textContent || '');
   }
-  setTimeout(hideSplash,800);
+  setTimeout(hideSplash, 800);
+}
+async function onLocErrFallback() {
+  // Try IP-based location first, then fall back to New Delhi
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const d = await res.json();
+    if (d.latitude && d.longitude) {
+      S.lat = parseFloat(d.latitude);
+      S.lon = parseFloat(d.longitude);
+      S.map.setView([S.lat, S.lon], 13, { animate: true });
+      placeUserMarker(5000);
+      const city = d.city || d.region || 'Your City';
+      document.getElementById('location-city').textContent = city;
+      document.getElementById('sos-location').textContent = `📍 ${city} (approx.)`;
+      loadPlaces(); updateCircle();
+      hideSplash();
+      toast(`📍 Approximate location: ${city}`);
+      return;
+    }
+  } catch {}
+  onLocErr();
 }
 function onLocErr() {
   hideSplash(); S.lat=28.6139; S.lon=77.2090;
-  S.map.setView([S.lat,S.lon],14); placeUserMarker();
+  S.map.setView([S.lat,S.lon],14); placeUserMarker(1000);
   document.getElementById('location-city').textContent='New Delhi';
   document.getElementById('sos-location').textContent='📍 New Delhi (28.6139, 77.2090)';
-  loadPlaces(); updateCircle(); toast('📍 GPS unavailable — using New Delhi');
+  loadPlaces(); updateCircle(); toast('📍 GPS unavailable — using approximate location');
 }
-function placeUserMarker() {
-  if(S.userMarker) S.map.removeLayer(S.userMarker);
-  S.userMarker = L.marker([S.lat,S.lon],{
-    icon:L.divIcon({className:'',html:'<div class="user-marker"></div>',iconSize:[18,18],iconAnchor:[9,9]}),zIndexOffset:1000
+function placeUserMarker(accuracyM) {
+  if (S.userMarker) S.map.removeLayer(S.userMarker);
+  if (S.accuracyCircle) S.map.removeLayer(S.accuracyCircle);
+  S.userMarker = L.marker([S.lat, S.lon], {
+    icon: L.divIcon({ className: '', html: '<div class="user-marker"></div>', iconSize: [18,18], iconAnchor: [9,9] }),
+    zIndexOffset: 1000
   }).addTo(S.map);
+  // Show accuracy ring if known
+  if (accuracyM && accuracyM < 5000) {
+    S.accuracyCircle = L.circle([S.lat, S.lon], {
+      radius: accuracyM,
+      color: 'rgba(108,99,255,.6)', fillColor: 'rgba(108,99,255,.06)',
+      fillOpacity: 1, weight: 1.5, dashArray: '4,3'
+    }).addTo(S.map);
+  }
 }
 async function reverseGeocode(lat,lon) {
   try {
@@ -439,30 +476,47 @@ async function loadPlaces() {
     toast('⚠️ Could not load places — tap Retry or check connection');
   }
 }
-function processPlaces(elements) {
-  const seen=new Set();
-  let places=elements.map(el=>{
-    const lat=el.lat??el.center?.lat, lon=el.lon??el.center?.lon;
-    if(!lat||!lon) return null;
-    const tags=el.tags||{};
-    const name=tags.name||tags['name:en']||tags['name:hi']||tagLabel(tags);
-    return {id:el.id,lat,lon,name,category:S.category,tags,dist:haversine(S.lat,S.lon,lat,lon)};
-  }).filter(p=>{
-    if(!p) return false;
-    const k=`${p.name}|${p.lat.toFixed(3)}|${p.lon.toFixed(3)}`;
-    if(seen.has(k)) return false; seen.add(k); return true;
+function processPlaces(elements, searchText) {
+  const seen = new Set();
+  const sq = (searchText || '').toLowerCase();
+  let places = elements.map(el => {
+    const lat = el.lat ?? el.center?.lat, lon = el.lon ?? el.center?.lon;
+    if (!lat || !lon) return null;
+    const tags = el.tags || {};
+    const name = tags.name || tags['name:en'] || tags['name:hi'] || tagLabel(tags);
+    return { id:el.id, lat, lon, name, category:S.category, tags, dist:haversine(S.lat,S.lon,lat,lon) };
+  }).filter(p => {
+    if (!p) return false;
+    const k = `${p.name}|${p.lat.toFixed(3)}|${p.lon.toFixed(3)}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    // Apply local text filter if Overpass query didn't already do it
+    if (sq && !p.name.toLowerCase().includes(sq) &&
+        !(p.tags.cuisine || '').toLowerCase().includes(sq) &&
+        !(p.tags.amenity || '').toLowerCase().includes(sq)) return false;
+    return true;
   });
-  if(S.filterOpen) places=places.filter(p=>{const st=getOpenStatus(p.tags);return st&&st.open===true;});
-  if(S.filterWheelchair) places=places.filter(p=>p.tags.wheelchair==='yes');
-  if(S.sort==='name') places.sort((a,b)=>a.name.localeCompare(b.name));
-  else if(S.sort==='rating') places.sort((a,b)=>(S.ratings[b.id]||0)-(S.ratings[a.id]||0));
-  else places.sort((a,b)=>a.dist-b.dist);
-  S.places=places; S.filtered=[...places];
+  if (S.filterOpen)       places = places.filter(p => { const st = getOpenStatus(p.tags); return st && st.open === true; });
+  if (S.filterWheelchair) places = places.filter(p => p.tags.wheelchair === 'yes');
+  if (S.sort === 'name')   places.sort((a,b) => a.name.localeCompare(b.name));
+  else if (S.sort === 'rating') places.sort((a,b) => (S.ratings[b.id]||0)-(S.ratings[a.id]||0));
+  else places.sort((a,b) => a.dist - b.dist);
+  S.places = places; S.filtered = [...places];
   renderPlaces(S.filtered); addMarkers(S.filtered); showLoading(false);
   setPanelCount(places.length);
-  document.getElementById('panel-title').textContent=`Nearby ${CAT[S.category]?.label||''}s`;
-  const retryBtn=document.getElementById('retry-places-btn'); if(retryBtn) retryBtn.remove();
-  if(!places.length) {showEmpty(true); toast(`No ${CAT[S.category]?.label||'places'} within ${fmtDist(S.radius)} — try wider radius`);}
+  const label = CAT[S.category]?.label || '';
+  document.getElementById('panel-title').textContent = sq
+    ? `🔍 "${searchText}" ${label}s`
+    : `Nearby ${label}s`;
+  const retryBtn = document.getElementById('retry-places-btn');
+  if (retryBtn) retryBtn.remove();
+  if (!places.length) {
+    showEmpty(true);
+    const msg = sq
+      ? `No "${searchText}" ${label}s within ${fmtDist(S.radius)} — try wider radius or different spelling`
+      : `No ${label}s within ${fmtDist(S.radius)} — try wider radius`;
+    toast(msg);
+  }
 }
 function tagLabel(t){return t.amenity||t.shop||t.tourism||t.leisure||t.highway||'Unknown';}
 function setPanelCount(n){
