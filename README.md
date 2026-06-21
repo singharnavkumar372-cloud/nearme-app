@@ -7,17 +7,19 @@
 
 <br/>
 
-[![Live App](https://img.shields.io/badge/🌐%20Open%20App-Live-6c63ff?style=for-the-badge)](https://singharnavkumar372-cloud.github.io/nearme-app)
+[![Live App](https://img.shields.io/badge/🌐%20Open%20App-Live%20Now-6c63ff?style=for-the-badge)](https://singharnavkumar372-cloud.github.io/nearme-app)
 &nbsp;
-![Version](https://img.shields.io/badge/Version-4.0-ff6584?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-5.0-ff6584?style=for-the-badge)
 &nbsp;
 ![PWA](https://img.shields.io/badge/PWA-Installable-22c55e?style=for-the-badge)
 &nbsp;
 ![Free](https://img.shields.io/badge/100%25-Free-fbbf24?style=for-the-badge)
+&nbsp;
+![Auth](https://img.shields.io/badge/Sign%20In-Enabled-a78bfa?style=for-the-badge)
 
 <br/>
 
-> **Find hospitals, restaurants, ATMs, pharmacies and 22+ types of places near you — with directions, voice search, SOS emergency, weather, trip planner and much more.**
+> **Find hospitals, restaurants, ATMs, pharmacies and 22+ types of places near you — with sign-in accounts, precise GPS, smart search, directions, voice, SOS emergency, weather, trip planner and much more.**
 
 <br/>
 
@@ -29,11 +31,27 @@
 
 <div align="center">
 
-### 👉 [nearme-app.live](https://singharnavkumar372-cloud.github.io/nearme-app)
+### 👉 [singharnavkumar372-cloud.github.io/nearme-app](https://singharnavkumar372-cloud.github.io/nearme-app)
 
 *Works on any phone, tablet or computer — no download needed*
 
 </div>
+
+<br/>
+
+---
+
+## 🆕 Latest Features (v5.0)
+
+| Feature | Description |
+|---|---|
+| 🔐 **Sign In / Sign Up** | Create a free account — saves your places & profile |
+| 🎭 **Avatar Picker** | Choose from 12 emoji avatars for your profile |
+| 📍 **Precise GPS** | Always fetches fresh location — no stale cached data |
+| 🎯 **Accuracy Ring** | Blue circle on map showing your exact GPS precision |
+| 🌐 **IP Fallback** | If GPS blocked → auto-detects city via IP address |
+| 🔍 **Smart Category Search** | Type "KFC" + select Restaurant = shows only KFC restaurants |
+| 🏷️ **Live Search Title** | Panel shows `"KFC" Restaurants` so you always know what's filtered |
 
 <br/>
 
@@ -57,7 +75,17 @@
 
 ---
 
-## ✨ What Can It Do?
+## ✨ All Features
+
+<br/>
+
+### 🔐 Account & Profile
+- **Sign Up** with name, email & password — completely free
+- **Sign In** to access your saved places and settings
+- **Avatar picker** — choose from 12 emoji icons
+- **Profile dropdown** in header — name, plan badge, quick links
+- Saved places **linked to your account** — persists across sessions
+- **Sign Out** anytime from the profile menu
 
 <br/>
 
@@ -74,10 +102,21 @@
 
 <br/>
 
+### 📍 Location & GPS
+- **Fresh GPS every time** — no old cached location used
+- **Accuracy ring** on map — blue circle shows GPS precision zone
+- **IP-based fallback** — auto-detects your city if GPS is denied
+- Zooms to **street level** for accurate nearby results
+- **Live GPS tracking** — follow your movement in real time
+- **Speed display** while tracking
+
+<br/>
+
 ### 🔍 Smart Search
 - 🎤 **Voice Search** — Just speak the place name
 - ⌨️ **Type to Search** — Autocomplete suggestions as you type
-- 🌍 **Finds Anywhere** — Searches the entire world, not just your city
+- 🏷️ **Category + Name filter** — "KFC" + Restaurant = exact results
+- 🌍 **Global search** — Finds places worldwide via Nominatim
 - 📏 **Custom Radius** — Set distance from 100m up to 20km
 
 <br/>
@@ -86,8 +125,8 @@
 - 🚗 **Driving** directions with turn-by-turn steps
 - 🚶 **Walking** routes
 - 🚴 **Cycling** routes
-- 🔊 **Voice Navigation** — Spoken instructions
-- 🗺️ **Live Route** on map
+- 🔊 **Voice Navigation** — Spoken instructions while you move
+- 🗺️ **Live Route** drawn on map
 - 🖨️ **Print Directions** — Physical copy for offline use
 
 <br/>
@@ -116,12 +155,13 @@
 <br/>
 
 ### ❤️ Personal Features
-- Save **favourite places**
-- Add **5-star ratings**
+- Save **favourite places** (linked to your account)
+- Add **5-star ratings** to any place
 - Write **private notes** per place
 - View your **visit history**
 - **QR code** sharing for any place
 - **Wikipedia** info cards & photos for places
+- **Walkability score** per place
 
 <br/>
 
@@ -139,6 +179,7 @@
 | 📱 **Mobile First** | Optimized for phones |
 | 💻 **Desktop** | Full sidebar layout on large screens |
 | 🎯 **Animations** | Smooth micro-animations everywhere |
+| 🔐 **Auth Modal** | Animated sign-in with spring physics |
 
 </div>
 
@@ -169,12 +210,15 @@
 |---|:---:|:---:|
 | 100% Free | ✅ | ✅ |
 | No Login Required | ✅ | ❌ |
-| Works Offline | ✅ | ❌ (paid) |
-| SOS Emergency | ✅ | ❌ |
-| Family Alerts | ✅ | ❌ |
+| Free Sign-In Account | ✅ | Needs Google |
+| Works Offline (PWA) | ✅ | ❌ (paid) |
+| SOS Emergency Alert | ✅ | ❌ |
+| WhatsApp Family Alert | ✅ | ❌ |
 | Personal Notes | ✅ | ✅ |
 | Trip Planner | ✅ | ✅ |
 | Voice Search | ✅ | ✅ |
+| GPS Accuracy Ring | ✅ | ✅ |
+| IP-based fallback | ✅ | ❌ |
 | Installable PWA | ✅ | ✅ |
 
 <br/>
