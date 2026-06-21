@@ -1,260 +1,191 @@
-# 📍 NearMe — Discover What's Around You
-
 <div align="center">
 
-![NearMe Banner](https://img.shields.io/badge/NearMe-v4.0-6c63ff?style=for-the-badge&logo=mapbox&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Mobile%20PWA-ff6584?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-fbbf24?style=for-the-badge&logo=github)
+<img src="https://img.shields.io/badge/-NearMe-6c63ff?style=for-the-badge&logo=googlemaps&logoColor=white" height="40"/>
 
-**A powerful, beautiful, mobile-first web app to discover hospitals, restaurants, ATMs, parks and 22+ place categories near you — with real-time directions, SOS emergency alerts, trip planner, admin panel, and live user tracking.**
+# 📍 NearMe
+### *Discover What's Around You — Instantly*
 
-[🌐 Live App](https://singharnavkumar372-cloud.github.io/nearme-app) • [🔐 Admin Panel](https://singharnavkumar372-cloud.github.io/nearme-app/admin.html) • [📁 GitHub Repo](https://github.com/singharnavkumar372-cloud/nearme-app)
+<br/>
+
+[![Live App](https://img.shields.io/badge/🌐%20Open%20App-Live-6c63ff?style=for-the-badge)](https://singharnavkumar372-cloud.github.io/nearme-app)
+&nbsp;
+![Version](https://img.shields.io/badge/Version-4.0-ff6584?style=for-the-badge)
+&nbsp;
+![PWA](https://img.shields.io/badge/PWA-Installable-22c55e?style=for-the-badge)
+&nbsp;
+![Free](https://img.shields.io/badge/100%25-Free-fbbf24?style=for-the-badge)
+
+<br/>
+
+> **Find hospitals, restaurants, ATMs, pharmacies and 22+ types of places near you — with directions, voice search, SOS emergency, weather, trip planner and much more.**
+
+<br/>
+
+---
 
 </div>
 
+## 🚀 Try It Now
+
+<div align="center">
+
+### 👉 [nearme-app.live](https://singharnavkumar372-cloud.github.io/nearme-app)
+
+*Works on any phone, tablet or computer — no download needed*
+
+</div>
+
+<br/>
+
 ---
 
-## 🚀 Live Demo
+## 📲 Install on Your Phone
 
-| | URL |
-|---|---|
-| 📱 **Main App** | https://singharnavkumar372-cloud.github.io/nearme-app |
-| 🔐 **Admin Panel** | https://singharnavkumar372-cloud.github.io/nearme-app/admin.html |
-| 🔑 **Admin Password** | `admin123` |
+> Works like a native app — no Play Store or App Store needed!
+
+**Android (Chrome)**
+1. Open the app link in Chrome
+2. Tap the **⋮ menu** → **"Add to Home Screen"**
+3. Tap **Add** — done! ✅
+
+**iPhone (Safari)**
+1. Open the app link in Safari
+2. Tap the **Share button** (box with arrow)
+3. Tap **"Add to Home Screen"** → **Add** ✅
+
+<br/>
 
 ---
 
-## ✨ Features
+## ✨ What Can It Do?
 
-### 🗺️ Map & Search
-- **Real-time location** — GPS-powered, shows your exact position
-- **22 categories** — Hospitals, Restaurants, ATMs, Pharmacies, Cafes, Fuel, Parks, Police, Hotels, Gyms, Cinemas, Libraries, Bus Stops, Restrooms, and more
-- **Global search** — Type any place name, powered by Nominatim + OpenStreetMap
-- **Autocomplete dropdown** — Smart suggestions as you type
-- **Voice search** 🎤 — Speak to search hands-free
-- **Custom radius slider** — Set search radius from 100m to 20km
-- **4 map styles** — Dark, Light, Satellite, Topo
+<br/>
 
-### 🧭 Navigation & Directions
-- **Turn-by-turn directions** — Walking, Driving, Cycling routes via OSRM
-- **Voice navigation** 🔊 — Spoken step-by-step instructions
-- **Print directions** — Opens a print-friendly directions page
-- **Google Maps integration** — Open any place in Google Maps
-- **Street View** — Google Street View for any place
-- **Distance measure tool** — Click 2 points on the map to measure distance
-- **Compass bearing** — Shows direction to selected place
+### 🗺️ Find Nearby Places
 
-### 🏥 Emergency & Safety
-- **🚑 Panic Button** — Instantly finds the nearest hospital
-- **SOS Alert** — Send WhatsApp emergency messages with your live location
-- **Family contacts** — Add family members, blast SOS to all at once
-- **Emergency numbers** — 112, 100, 108, 101, 1091, 1098
+| Category | Category | Category | Category |
+|:---:|:---:|:---:|:---:|
+| 🏥 Hospital | 🍽️ Restaurant | 🏧 ATM | 💊 Pharmacy |
+| ☕ Cafe | ⛽ Petrol | 🛒 Grocery | 🌳 Park |
+| 🏦 Bank | 🚔 Police | 🏨 Hotel | 💪 Gym |
+| 🎬 Cinema | 📚 Library | 🚌 Bus Stop | 🏫 School |
+| 🦷 Dentist | 👨‍⚕️ Doctor | 🚻 Restroom | 📮 Post Office |
+| 🅿️ Parking | 🕌 Worship | | |
+
+<br/>
+
+### 🔍 Smart Search
+- 🎤 **Voice Search** — Just speak the place name
+- ⌨️ **Type to Search** — Autocomplete suggestions as you type
+- 🌍 **Finds Anywhere** — Searches the entire world, not just your city
+- 📏 **Custom Radius** — Set distance from 100m up to 20km
+
+<br/>
+
+### 🧭 Directions & Navigation
+- 🚗 **Driving** directions with turn-by-turn steps
+- 🚶 **Walking** routes
+- 🚴 **Cycling** routes
+- 🔊 **Voice Navigation** — Spoken instructions
+- 🗺️ **Live Route** on map
+- 🖨️ **Print Directions** — Physical copy for offline use
+
+<br/>
+
+### 🆘 Emergency Features
+- 🚑 **Panic Button** — One tap finds the nearest hospital instantly
+- 📱 **SOS Alert** — Sends your live location to family via WhatsApp
+- 👨‍👩‍👧 **Family Contacts** — Add multiple contacts, alert all at once
+- 📞 **Emergency Numbers** — 112, 100, 108, 101 quick dial
+
+<br/>
 
 ### 🗓️ Trip Planner
-- **Multi-stop trips** — Add up to 8 stops
-- **Route on map** — Full trip route shown on map
-- **Copy trip** — Share your trip plan as text
-- **Trip summary** — Total distance and estimated time
+- Add up to **8 stops** in one trip
+- Full **route on map** with distances
+- **Total distance & time** summary
+- **Share your trip** plan as text
 
-### 📊 Smart Features
-- **Weather forecast** 🌤️ — 7-day weather using Open-Meteo API
-- **Wikipedia info** — Auto-fetches info about selected places
-- **Place photos** — Wikipedia thumbnail photos
-- **Busy hours chart** — Estimated crowd levels by hour
-- **Walkability score** — 0–100 score for each place
-- **Open/Closed status** — Based on OpenStreetMap opening hours
-- **Smart suggestions** — Time-based chips (Breakfast, Lunch, Dinner, etc.)
+<br/>
 
-### ❤️ Personal
-- **Save places** — Bookmark favourite places
-- **5-star ratings** — Rate any place
-- **Personal notes** — Add private notes to any place
-- **Visit history** — Auto-tracks places you've viewed
-- **Search history** — Quick access to recent searches
-- **QR code sharing** — Share any place as a QR code
-- **Export saved places** — Download as JSON
+### 🌤️ Weather
+- **Today's weather** with temperature & wind speed
+- **7-day forecast** with daily high/low
+- Works for **any location** worldwide
 
-### 📱 Mobile & PWA
-- **Fully responsive** — Works on any screen size
-- **Mobile drawer** — Bottom sheet UI on phones
-- **Desktop sidebar** — Full panel UI on desktop
-- **PWA installable** — Add to home screen like a native app
-- **Offline support** — Service Worker caches the app
-- **Live GPS tracking** — Tracks your movement in real time
-- **Speed display** — Shows your current speed while tracking
+<br/>
 
-### 🔐 Admin Panel
-- **Password-protected** dashboard
-- **Live map** — See all user locations in real time 🟢
-- **User table** — City, Device, OS, Browser, Visit count, Last active
-- **Analytics charts** — Device, OS, Browser, Timezone breakdowns
-- **Activity log** — Chronological visitor history
-- **CSV/JSON export** — Download all user data
-- **Firebase support** — Connect for global real-time tracking
-- **Change password** — Secure admin credentials
+### ❤️ Personal Features
+- Save **favourite places**
+- Add **5-star ratings**
+- Write **private notes** per place
+- View your **visit history**
+- **QR code** sharing for any place
+- **Wikipedia** info cards & photos for places
+
+<br/>
 
 ---
 
-## 📸 Screenshots
+## 🎨 Design
 
-> Open the [Live App](https://singharnavkumar372-cloud.github.io/nearme-app) to see it in action!
+<div align="center">
 
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
+| Feature | Detail |
 |---|---|
-| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
-| **Maps** | Leaflet.js + OpenStreetMap |
-| **Routing** | Leaflet Routing Machine + OSRM |
-| **Places API** | OpenStreetMap Overpass API |
-| **Search** | Nominatim Geocoding API |
-| **Weather** | Open-Meteo API (free, no key needed) |
-| **Info** | Wikipedia REST API |
-| **Backend** | Python HTTP Server (tracking API) |
-| **Hosting** | GitHub Pages (static) |
-| **Tunnel** | Cloudflare Tunnel (live sharing) |
-| **Tracking** | localStorage + optional Firebase |
-| **PWA** | Service Worker + Web Manifest |
+| 🌙 **Dark Mode** | Beautiful dark glassmorphism UI |
+| ☀️ **Light Mode** | Clean light theme |
+| 🌓 **Auto Mode** | Switches automatically at night |
+| 📱 **Mobile First** | Optimized for phones |
+| 💻 **Desktop** | Full sidebar layout on large screens |
+| 🎯 **Animations** | Smooth micro-animations everywhere |
+
+</div>
+
+<br/>
 
 ---
 
-## 🚀 Run Locally
+## 🛠️ Built With
 
-### Option 1 — Static (no tracking)
-```bash
-# Clone the repo
-git clone https://github.com/singharnavkumar372-cloud/nearme-app.git
-cd nearme-app
+<div align="center">
 
-# Serve with Python
-python -m http.server 3000
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=flat-square&logo=leaflet&logoColor=white)
+![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=flat-square&logo=openstreetmap&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=flat-square&logo=pwa&logoColor=white)
 
-# Open
-http://localhost:3000
-```
+</div>
 
-### Option 2 — Full (with user tracking API)
-```bash
-# Start the Python backend
-python server.py
-
-# Open
-http://localhost:3000        ← Main App
-http://localhost:3000/admin.html  ← Admin Panel
-```
-
-### Share with Anyone (Cloudflare Tunnel)
-```bash
-# Download cloudflared and run
-.\cloudflared.exe tunnel --url http://localhost:3000
-# → Get a public URL like: https://xyz.trycloudflare.com
-```
+<br/>
 
 ---
 
-## 📦 Deploy to GitHub Pages
+## 🌟 Why NearMe?
 
-```bash
-python deploy_github.py YOUR_GITHUB_TOKEN YOUR_USERNAME
-```
+| | NearMe | Google Maps |
+|---|:---:|:---:|
+| 100% Free | ✅ | ✅ |
+| No Login Required | ✅ | ❌ |
+| Works Offline | ✅ | ❌ (paid) |
+| SOS Emergency | ✅ | ❌ |
+| Family Alerts | ✅ | ❌ |
+| Personal Notes | ✅ | ✅ |
+| Trip Planner | ✅ | ✅ |
+| Voice Search | ✅ | ✅ |
+| Installable PWA | ✅ | ✅ |
 
-Get your token at: https://github.com/settings/tokens/new (check `repo` scope)
-
----
-
-## 📦 Deploy to Netlify
-
-```bash
-python deploy_netlify.py YOUR_NETLIFY_TOKEN
-```
-
-Get your token at: https://app.netlify.com/user/applications
-
----
-
-## 🔐 Admin Panel Setup
-
-1. Open `/admin.html`
-2. Login with password: `admin123`
-3. Change password in **Settings** tab
-4. (Optional) Connect Firebase for real-time global tracking:
-   - Create free project at [console.firebase.google.com](https://console.firebase.google.com)
-   - Enable Realtime Database in Test mode
-   - Paste the database URL in Admin → Settings → Firebase
-
----
-
-## 📁 Project Structure
-
-```
-nearme-app/
-├── index.html          # Main app UI (responsive)
-├── app.js              # All app logic (search, map, directions, etc.)
-├── style.css           # All styles (glassmorphism, dark/light themes)
-├── tracker.js          # User session tracking module
-├── admin.html          # Admin dashboard (standalone)
-├── server.py           # Python backend (tracking API)
-├── manifest.json       # PWA manifest
-├── sw.js               # Service Worker (offline support)
-├── deploy_github.py    # GitHub Pages deploy script
-├── deploy_netlify.py   # Netlify deploy script
-└── data/
-    └── users.json      # Tracked user sessions (local storage)
-```
-
----
-
-## 🌐 API Endpoints (when running server.py)
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/api/track` | Submit user location + device info |
-| `GET` | `/api/users` | Get all tracked sessions |
-| `GET` | `/api/stats` | Get summary statistics |
-| `DELETE` | `/api/users` | Clear all tracked data |
-
----
-
-## ⌨️ Keyboard Shortcuts
-
-| Key | Action |
-|---|---|
-| `/` | Focus search bar |
-| `Esc` | Close panels / hide autocomplete |
-| `R` | Refresh / re-fetch location |
-| `M` | Toggle distance measure tool |
-
----
-
-## 🔒 Privacy
-
-- Location is only used to find nearby places
-- User tracking only happens after **explicit consent** (banner shown on first visit)
-- No personal data is sold or shared
-- All data stored locally or in your own Firebase database
-- Users can decline tracking and still use all features
+<br/>
 
 ---
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute.
+MIT License — free to use for personal and commercial projects.
 
----
-
-## 🙏 Credits
-
-- [OpenStreetMap](https://www.openstreetmap.org) — Map data
-- [Leaflet.js](https://leafletjs.com) — Interactive maps
-- [Nominatim](https://nominatim.org) — Geocoding
-- [OSRM](https://project-osrm.org) — Routing engine
-- [Open-Meteo](https://open-meteo.com) — Weather data
-- [Wikipedia API](https://en.wikipedia.org/api/) — Place information
-- [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps) — Free HTTPS tunneling
-- [CARTO](https://carto.com) — Dark map tiles
+<br/>
 
 ---
 
@@ -262,6 +193,10 @@ MIT License — free to use, modify, and distribute.
 
 Made with ❤️ by **singharnavkumar372-cloud**
 
-⭐ **Star this repo if you found it useful!**
+<br/>
+
+⭐ **If you find this useful, give it a star!**
+
+[![Star](https://img.shields.io/github/stars/singharnavkumar372-cloud/nearme-app?style=social)](https://github.com/singharnavkumar372-cloud/nearme-app)
 
 </div>
