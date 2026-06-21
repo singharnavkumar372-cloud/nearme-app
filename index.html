@@ -118,6 +118,25 @@
         <span id="theme-icon-dark">🌙</span>
         <span id="theme-icon-light" style="display:none">☀️</span>
       </button>
+      <!-- AUTH BUTTON -->
+      <div class="auth-btn-wrap" style="position:relative">
+        <button id="auth-btn" class="auth-header-btn" title="Sign In">Sign In</button>
+        <div id="auth-dropdown" class="auth-dropdown">
+          <div class="auth-dd-header">
+            <span id="auth-avatar" style="font-size:2rem">🧑</span>
+            <div>
+              <div id="auth-name" style="font-weight:700;font-size:.9rem"></div>
+              <div id="auth-email" style="font-size:.72rem;color:var(--txt2)"></div>
+              <div class="auth-plan-badge" id="auth-plan-badge">FREE</div>
+            </div>
+          </div>
+          <div class="auth-dd-divider"></div>
+          <button class="auth-dd-item" id="auth-profile-link">👤 My Profile</button>
+          <button class="auth-dd-item" id="auth-saved-link">❤️ Saved Places</button>
+          <div class="auth-dd-divider"></div>
+          <button class="auth-dd-item auth-dd-danger" id="auth-logout-btn" style="display:none">🚪 Sign Out</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -759,9 +778,93 @@
   </div>
 </div>
 
+<!-- AUTH MODAL -->
+<div id="auth-modal" class="auth-modal-overlay" style="display:none">
+  <div class="auth-modal-box">
+    <button id="auth-modal-close" class="auth-modal-close">✕</button>
+    <div class="auth-modal-logo">📍</div>
+    <h2 class="auth-modal-title">Welcome to NearMe</h2>
+    <p class="auth-modal-sub">Sign in to save places & sync across devices</p>
+    <div class="auth-tabs">
+      <button class="auth-tab-btn active" data-tab="signin">Sign In</button>
+      <button class="auth-tab-btn" data-tab="signup">Create Account</button>
+    </div>
+    <!-- SIGN IN PANEL -->
+    <div id="auth-signin-panel" class="auth-panel">
+      <form id="auth-signin-form" autocomplete="on">
+        <div class="auth-field">
+          <label>Email</label>
+          <input id="signin-email" class="auth-input" type="email" placeholder="you@email.com" required autocomplete="email"/>
+        </div>
+        <div class="auth-field">
+          <label>Password</label>
+          <div class="auth-pass-wrap">
+            <input id="signin-pass" class="auth-input" type="password" placeholder="Your password" required autocomplete="current-password"/>
+            <button type="button" class="pass-toggle" data-target="signin-pass">👁️</button>
+          </div>
+        </div>
+        <div id="signin-error" class="auth-error"></div>
+        <button type="submit" class="auth-submit-btn">Sign In →</button>
+      </form>
+      <p class="auth-switch">No account? <a href="#" id="auth-goto-signup">Create one free</a></p>
+    </div>
+    <!-- SIGN UP PANEL -->
+    <div id="auth-signup-panel" class="auth-panel" style="display:none">
+      <form id="auth-signup-form" autocomplete="on">
+        <div class="auth-field">
+          <label>Full Name</label>
+          <input id="signup-name" class="auth-input" type="text" placeholder="Your name" required autocomplete="name"/>
+        </div>
+        <div class="auth-field">
+          <label>Email</label>
+          <input id="signup-email" class="auth-input" type="email" placeholder="you@email.com" required autocomplete="email"/>
+        </div>
+        <div class="auth-field">
+          <label>Password</label>
+          <div class="auth-pass-wrap">
+            <input id="signup-pass" class="auth-input" type="password" placeholder="Min 6 characters" required autocomplete="new-password"/>
+            <button type="button" class="pass-toggle" data-target="signup-pass">👁️</button>
+          </div>
+        </div>
+        <div class="auth-field">
+          <label>Confirm Password</label>
+          <div class="auth-pass-wrap">
+            <input id="signup-pass2" class="auth-input" type="password" placeholder="Repeat password" required autocomplete="new-password"/>
+            <button type="button" class="pass-toggle" data-target="signup-pass2">👁️</button>
+          </div>
+        </div>
+        <div id="signup-error" class="auth-error"></div>
+        <button type="submit" class="auth-submit-btn">Create Account →</button>
+      </form>
+      <p class="auth-switch">Have account? <a href="#" id="auth-goto-signin">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE MODAL -->
+<div id="profile-modal" class="auth-modal-overlay" style="display:none">
+  <div class="auth-modal-box profile-modal-box">
+    <button id="profile-modal-close" class="auth-modal-close">✕</button>
+    <div class="profile-avatar-big" id="profile-avatar-display">🧑</div>
+    <div class="profile-name" id="profile-name-display"></div>
+    <div class="profile-email" id="profile-email-display"></div>
+    <div class="profile-plan" id="profile-plan-display">FREE</div>
+    <div class="profile-section-title">Choose Avatar</div>
+    <div class="avatar-grid">
+      <span class="avatar-option">🧑</span><span class="avatar-option">👩</span>
+      <span class="avatar-option">👨</span><span class="avatar-option">🧔</span>
+      <span class="avatar-option">👱</span><span class="avatar-option">🧕</span>
+      <span class="avatar-option">🧑‍💻</span><span class="avatar-option">👩‍💻</span>
+      <span class="avatar-option">🧑‍🎓</span><span class="avatar-option">👩‍🎓</span>
+      <span class="avatar-option">🧑‍🍳</span><span class="avatar-option">🦸</span>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="tracker.js"></script>
+<script src="auth.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
