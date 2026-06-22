@@ -3,18 +3,40 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-  <meta name="description" content="NearMe — Discover hospitals, restaurants, ATMs, restrooms and more near you. Works on mobile & web."/>
-  <meta name="theme-color" content="#0b0b16"/>
+  <!-- SEO Meta Tags -->
+  <title>NearMe — Find Hospitals, Restaurants, ATMs & More Near You</title>
+  <meta name="description" content="NearMe is a free location discovery app. Find hospitals, restaurants, ATMs, pharmacies, parks and 22+ place types near you instantly. Voice search, directions, SOS emergency & more."/>
+  <meta name="keywords" content="near me, nearby places, find hospital near me, restaurant near me, ATM near me, location app, GPS map, free navigation"/>
+  <meta name="author" content="NearMe App"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://singharnavkumar372-cloud.github.io/nearme-app"/>
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="NearMe — Find Places Near You Instantly"/>
+  <meta property="og:description" content="Discover hospitals, restaurants, ATMs and 22+ place types near you. Voice search, directions, SOS emergency alert & trip planner. Free forever."/>
+  <meta property="og:url" content="https://singharnavkumar372-cloud.github.io/nearme-app"/>
+  <meta property="og:image" content="https://singharnavkumar372-cloud.github.io/nearme-app/icon-512.png"/>
+  <meta property="og:site_name" content="NearMe"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="NearMe — Find Places Near You"/>
+  <meta name="twitter:description" content="Find hospitals, restaurants, ATMs near you instantly. Free app with voice search, SOS & trip planner."/>
+  <meta name="twitter:image" content="https://singharnavkumar372-cloud.github.io/nearme-app/icon-512.png"/>
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"NearMe","description":"Discover hospitals, restaurants, ATMs and 22+ types of places near you. Voice search, GPS directions, SOS emergency alert and trip planner.","url":"https://singharnavkumar372-cloud.github.io/nearme-app","applicationCategory":"NavigationApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
+  <meta name="theme-color" content="#6c63ff"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-title" content="NearMe"/>
   <link rel="manifest" href="manifest.json"/>
-  <title>NearMe — Discover What's Around You</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="subscription.css"/>
+  <!-- Razorpay Payment Gateway -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
 <!-- PRIVACY CONSENT BANNER -->
@@ -118,6 +140,8 @@
         <span id="theme-icon-dark">🌙</span>
         <span id="theme-icon-light" style="display:none">☀️</span>
       </button>
+      <!-- UPGRADE BUTTON -->
+      <button id="upgrade-btn" class="upgrade-header-btn" title="Upgrade Plan" onclick="showSubscriptionModal()">⚡ Upgrade</button>
       <!-- AUTH BUTTON -->
       <div class="auth-btn-wrap" style="position:relative">
         <button id="auth-btn" class="auth-header-btn" title="Sign In">Sign In</button>
@@ -133,6 +157,7 @@
           <div class="auth-dd-divider"></div>
           <button class="auth-dd-item" id="auth-profile-link">👤 My Profile</button>
           <button class="auth-dd-item" id="auth-saved-link">❤️ Saved Places</button>
+          <button class="auth-dd-item" onclick="showSubscriptionModal()">⚡ Upgrade Plan</button>
           <div class="auth-dd-divider"></div>
           <button class="auth-dd-item auth-dd-danger" id="auth-logout-btn" style="display:none">🚪 Sign Out</button>
         </div>
@@ -861,10 +886,96 @@
   </div>
 </div>
 
+<!-- SUBSCRIPTION MODAL -->
+<div id="sub-modal" class="sub-modal-overlay" style="display:none">
+  <div class="sub-modal-box">
+    <button class="sub-modal-close" onclick="hideSubscriptionModal()">✕</button>
+    <div id="sub-main-view">
+      <div class="sub-header">
+        <div class="sub-logo">⚡</div>
+        <h2 class="sub-title">Upgrade NearMe</h2>
+        <p class="sub-subtitle">Unlock unlimited searches, all categories, voice navigation & more</p>
+      </div>
+      <!-- PLANS -->
+      <div class="sub-plans">
+        <!-- FREE -->
+        <div class="sub-plan" id="plan-free">
+          <div class="sub-plan-top">
+            <div class="sub-plan-name">Free</div>
+            <div class="sub-plan-price">₹0<span class="sub-plan-per">/mo</span></div>
+          </div>
+          <ul class="sub-plan-features">
+            <li>✅ 5 searches/day</li>
+            <li>✅ 500m max radius</li>
+            <li>✅ Basic map</li>
+            <li>✅ Save 5 places</li>
+            <li class="dim">❌ Voice navigation</li>
+            <li class="dim">❌ Trip planner</li>
+            <li class="dim">❌ Offline mode</li>
+          </ul>
+          <button class="sub-plan-btn outline" disabled>Current Plan</button>
+        </div>
+        <!-- PRO -->
+        <div class="sub-plan featured" id="plan-pro">
+          <div class="sub-plan-badge">⭐ POPULAR</div>
+          <div class="sub-plan-top">
+            <div class="sub-plan-name">Pro</div>
+            <div class="sub-plan-price">₹99<span class="sub-plan-per">/mo</span></div>
+          </div>
+          <ul class="sub-plan-features">
+            <li>✅ Unlimited searches</li>
+            <li>✅ 20km max radius</li>
+            <li>✅ All 22 categories</li>
+            <li>✅ Save unlimited places</li>
+            <li>✅ Voice navigation 🔊</li>
+            <li>✅ Trip planner 🗓️</li>
+            <li>✅ Offline mode 📡</li>
+          </ul>
+          <button class="sub-plan-btn" onclick="startPayment('pro',99)">Get Pro →</button>
+        </div>
+        <!-- BUSINESS -->
+        <div class="sub-plan" id="plan-business">
+          <div class="sub-plan-top">
+            <div class="sub-plan-name">Business</div>
+            <div class="sub-plan-price">₹499<span class="sub-plan-per">/mo</span></div>
+          </div>
+          <ul class="sub-plan-features">
+            <li>✅ Everything in Pro</li>
+            <li>✅ Admin dashboard</li>
+            <li>✅ User analytics</li>
+            <li>✅ API access</li>
+            <li>✅ Custom branding</li>
+            <li>✅ Priority support 24/7</li>
+            <li>✅ Export all data</li>
+          </ul>
+          <button class="sub-plan-btn" onclick="startPayment('business',499)">Get Business →</button>
+        </div>
+      </div>
+      <div class="sub-footer">🔒 Secure payment via Razorpay · Cancel anytime · Instant activation</div>
+    </div>
+    <!-- SUCCESS VIEW -->
+    <div id="sub-success-view" style="display:none;text-align:center;padding:40px 24px">
+      <div class="sub-success-anim">🎉</div>
+      <h2 style="font-size:1.4rem;font-weight:900;margin:16px 0 8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Welcome to Pro!</h2>
+      <p style="color:var(--txt2);font-size:.86rem;margin-bottom:24px">Your subscription is now active. All features are unlocked!</p>
+      <div class="sub-success-features">
+        <span>🔍 Unlimited searches</span>
+        <span>🗺️ 20km radius</span>
+        <span>🔊 Voice nav</span>
+        <span>🗓️ Trip planner</span>
+        <span>📡 Offline mode</span>
+      </div>
+      <button class="sub-plan-btn" style="margin-top:24px;width:auto;padding:12px 32px" onclick="hideSubscriptionModal()">Start Exploring! →</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="tracker.js"></script>
 <script src="auth.js"></script>
+<script src="subscription.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
+
