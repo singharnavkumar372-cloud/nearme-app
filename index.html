@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <!-- SEO Meta Tags -->
-  <title>NearMe — Find Hospitals, Restaurants, ATMs & More Near You</title>
+  <title>NearMe â€” Find Hospitals, Restaurants, ATMs & More Near You</title>
   <meta name="description" content="NearMe is a free location discovery app. Find hospitals, restaurants, ATMs, pharmacies, parks and 22+ place types near you instantly. Voice search, directions, SOS emergency & more."/>
   <meta name="keywords" content="near me, nearby places, find hospital near me, restaurant near me, ATM near me, location app, GPS map, free navigation"/>
   <meta name="author" content="NearMe App"/>
@@ -12,14 +12,14 @@
   <link rel="canonical" href="https://singharnavkumar372-cloud.github.io/nearme-app"/>
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="NearMe — Find Places Near You Instantly"/>
+  <meta property="og:title" content="NearMe â€” Find Places Near You Instantly"/>
   <meta property="og:description" content="Discover hospitals, restaurants, ATMs and 22+ place types near you. Voice search, directions, SOS emergency alert & trip planner. Free forever."/>
   <meta property="og:url" content="https://singharnavkumar372-cloud.github.io/nearme-app"/>
   <meta property="og:image" content="https://singharnavkumar372-cloud.github.io/nearme-app/icon-512.png"/>
   <meta property="og:site_name" content="NearMe"/>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="NearMe — Find Places Near You"/>
+  <meta name="twitter:title" content="NearMe â€” Find Places Near You"/>
   <meta name="twitter:description" content="Find hospitals, restaurants, ATMs near you instantly. Free app with voice search, SOS & trip planner."/>
   <meta name="twitter:image" content="https://singharnavkumar372-cloud.github.io/nearme-app/icon-512.png"/>
   <!-- Schema.org structured data -->
@@ -34,21 +34,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="subscription.css"/>
-  <!-- Razorpay Payment Gateway -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
 <!-- PRIVACY CONSENT BANNER -->
 <div id="consent-banner" class="consent-banner" style="display:none">
   <div class="consent-inner">
-    <div class="consent-icon">📍</div>
+    <div class="consent-icon">ðŸ“</div>
     <div class="consent-text">
       <strong>Location & Analytics Notice</strong>
       <span>NearMe uses your location to find nearby places. With your permission, anonymous usage data (location, device type) may be collected to improve the app.</span>
     </div>
     <div class="consent-btns">
-      <button id="consent-accept" class="consent-yes">✅ Accept & Continue</button>
+      <button id="consent-accept" class="consent-yes">âœ… Accept & Continue</button>
       <button id="consent-decline" class="consent-no">Only Location</button>
     </div>
   </div>
@@ -58,18 +55,18 @@
 <!-- INSTALL BANNER -->
 <div id="install-banner" class="install-banner" style="display:none">
   <div class="install-banner-left">
-    <span style="font-size:1.3rem">📍</span>
-    <div><strong>Install NearMe</strong><small>Add to home screen · works offline</small></div>
+    <span style="font-size:1.3rem">ðŸ“</span>
+    <div><strong>Install NearMe</strong><small>Add to home screen Â· works offline</small></div>
   </div>
   <div style="display:flex;gap:8px">
     <button id="install-btn" class="install-yes-btn">Install</button>
-    <button id="install-dismiss" class="install-no-btn">✕</button>
+    <button id="install-dismiss" class="install-no-btn">âœ•</button>
   </div>
 </div>
 
 <!-- OFFLINE BANNER -->
 <div id="offline-banner" class="offline-banner" style="display:none">
-  ⚠️ Offline — showing cached data
+  âš ï¸ Offline â€” showing cached data
 </div>
 
 <!-- SPLASH -->
@@ -80,7 +77,7 @@
         <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" fill="url(#sg)"/><path d="M32 12C24.3 12 18 18.3 18 26c0 10.5 14 26 14 26s14-15.5 14-26c0-7.7-6.3-14-14-14zm0 18a4 4 0 110-8 4 4 0 010 8z" fill="white"/><defs><linearGradient id="sg" x1="0" y1="0" x2="64" y2="64"><stop offset="0%" stop-color="#6c63ff"/><stop offset="100%" stop-color="#ff6584"/></linearGradient></defs></svg>
       </div>
       <h1 class="splash-title">NearMe</h1>
-      <p class="splash-subtitle">Discovering your world…</p>
+      <p class="splash-subtitle">Discovering your worldâ€¦</p>
     </div>
     <div class="splash-loader">
       <div class="loader-ring"></div><div class="loader-ring delay1"></div><div class="loader-ring delay2"></div>
@@ -93,15 +90,15 @@
   <div style="position:relative;display:flex;align-items:center;justify-content:center">
     <div class="voice-ripple"></div>
     <div class="voice-ripple delay1"></div>
-    <span style="font-size:2rem;position:relative;z-index:1">🎤</span>
+    <span style="font-size:2rem;position:relative;z-index:1">ðŸŽ¤</span>
   </div>
-  <div class="voice-text">Listening…</div>
+  <div class="voice-text">Listeningâ€¦</div>
 </div>
 
 <!-- TOAST -->
 <div id="toast" class="toast" style="display:none"></div>
 
-<!-- ══ APP WRAPPER ══ -->
+<!-- â•â• APP WRAPPER â•â• -->
 <div id="app-wrapper">
 
   <!-- HEADER -->
@@ -110,25 +107,25 @@
       <button class="sidebar-toggle-btn" id="sidebar-toggle" title="Toggle Sidebar">
         <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <div class="app-logo">📍 NearMe</div>
+      <div class="app-logo">ðŸ“ NearMe</div>
     </div>
 
     <!-- Desktop search in header -->
     <div class="header-search">
       <div class="header-search-inner">
         <svg class="search-icon-sm" viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="text" id="header-search-input" placeholder="Search any place…" autocomplete="off"/>
-        <button id="voice-search-btn-header" class="voice-btn" title="Voice Search">🎤</button>
+        <input type="text" id="header-search-input" placeholder="Search any placeâ€¦" autocomplete="off"/>
+        <button id="voice-search-btn-header" class="voice-btn" title="Voice Search">ðŸŽ¤</button>
       </div>
     </div>
 
     <div class="header-right">
       <div id="weather-chip" class="weather-chip" style="display:none">
-        <span id="weather-icon">🌤️</span>
-        <span id="weather-temp">--°</span>
+        <span id="weather-icon">ðŸŒ¤ï¸</span>
+        <span id="weather-temp">--Â°</span>
       </div>
       <div class="location-badge-header">
-        <span>📍</span><span id="location-city">Locating…</span>
+        <span>ðŸ“</span><span id="location-city">Locatingâ€¦</span>
       </div>
       <button class="icon-btn" id="share-location-btn" title="Share My Location">
         <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/></svg>
@@ -137,17 +134,15 @@
         <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <button class="icon-btn" id="theme-toggle" title="Toggle Theme">
-        <span id="theme-icon-dark">🌙</span>
-        <span id="theme-icon-light" style="display:none">☀️</span>
+        <span id="theme-icon-dark">ðŸŒ™</span>
+        <span id="theme-icon-light" style="display:none">â˜€ï¸</span>
       </button>
-      <!-- UPGRADE BUTTON -->
-      <button id="upgrade-btn" class="upgrade-header-btn" title="Upgrade Plan" onclick="showSubscriptionModal()">⚡ Upgrade</button>
       <!-- AUTH BUTTON -->
       <div class="auth-btn-wrap" style="position:relative">
         <button id="auth-btn" class="auth-header-btn" title="Sign In">Sign In</button>
         <div id="auth-dropdown" class="auth-dropdown">
           <div class="auth-dd-header">
-            <span id="auth-avatar" style="font-size:2rem">🧑</span>
+            <span id="auth-avatar" style="font-size:2rem">ðŸ§‘</span>
             <div>
               <div id="auth-name" style="font-weight:700;font-size:.9rem"></div>
               <div id="auth-email" style="font-size:.72rem;color:var(--txt2)"></div>
@@ -155,11 +150,10 @@
             </div>
           </div>
           <div class="auth-dd-divider"></div>
-          <button class="auth-dd-item" id="auth-profile-link">👤 My Profile</button>
-          <button class="auth-dd-item" id="auth-saved-link">❤️ Saved Places</button>
-          <button class="auth-dd-item" onclick="showSubscriptionModal()">⚡ Upgrade Plan</button>
+          <button class="auth-dd-item" id="auth-profile-link">ðŸ‘¤ My Profile</button>
+          <button class="auth-dd-item" id="auth-saved-link">â¤ï¸ Saved Places</button>
           <div class="auth-dd-divider"></div>
-          <button class="auth-dd-item auth-dd-danger" id="auth-logout-btn" style="display:none">🚪 Sign Out</button>
+          <button class="auth-dd-item auth-dd-danger" id="auth-logout-btn" style="display:none">ðŸšª Sign Out</button>
         </div>
       </div>
     </div>
@@ -197,16 +191,16 @@
       </button>
     </div>
     <div class="sidebar-bottom">
-      <button class="sidebar-sos-btn" id="sidebar-sos">🆘 SOS Emergency</button>
+      <button class="sidebar-sos-btn" id="sidebar-sos">ðŸ†˜ SOS Emergency</button>
     </div>
   </nav>
 
   <!-- MAP VIEW -->
   <div id="map-view">
     <div id="map"></div>
-    <div class="speed-pill" id="speed-pill" style="display:none">🚀 <span id="speed-val">0</span> km/h · <span id="heading-val">N</span></div>
+    <div class="speed-pill" id="speed-pill" style="display:none">ðŸš€ <span id="speed-val">0</span> km/h Â· <span id="heading-val">N</span></div>
     <div class="measure-banner" id="measure-banner" style="display:none">
-      📐 Tap 2 points to measure <button id="measure-cancel">✕ Cancel</button>
+      ðŸ“ Tap 2 points to measure <button id="measure-cancel">âœ• Cancel</button>
     </div>
     <div class="measure-result" id="measure-result" style="display:none"></div>
     <div class="track-indicator" id="track-indicator" style="display:none"><div class="track-dot"></div>Live</div>
@@ -224,10 +218,10 @@
         <svg viewBox="0 0 24 24" fill="none" width="16" height="16" id="fs-expand"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3M16 21h3a2 2 0 002-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <svg viewBox="0 0 24 24" fill="none" width="16" height="16" id="fs-collapse" style="display:none"><path d="M8 3v3a2 2 0 01-2 2H3M21 8h-3a2 2 0 01-2-2V3M3 16h3a2 2 0 012 2v3M16 21v-3a2 2 0 012-2h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <button class="map-ctrl-btn panic-btn" id="panic-btn" title="Nearest Hospital — Emergency">🚑</button>
+      <button class="map-ctrl-btn panic-btn" id="panic-btn" title="Nearest Hospital â€” Emergency">ðŸš‘</button>
     </div>
     <div class="keyboard-hint">
-      <kbd>/</kbd> Search &nbsp;·&nbsp; <kbd>Esc</kbd> Close &nbsp;·&nbsp; <kbd>R</kbd> Refresh &nbsp;·&nbsp; <kbd>M</kbd> Measure
+      <kbd>/</kbd> Search &nbsp;Â·&nbsp; <kbd>Esc</kbd> Close &nbsp;Â·&nbsp; <kbd>R</kbd> Refresh &nbsp;Â·&nbsp; <kbd>M</kbd> Measure
     </div>
   </div>
 
@@ -238,8 +232,8 @@
     <div id="search-section" class="search-section">
       <div class="search-bar" id="mobile-search-bar">
         <svg viewBox="0 0 24 24" fill="none" width="18" height="18" class="search-icon"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="text" id="search-input" placeholder="Search any place, hospital…" autocomplete="off"/>
-        <button id="voice-search-btn" class="voice-btn" title="Voice Search">🎤</button>
+        <input type="text" id="search-input" placeholder="Search any place, hospitalâ€¦" autocomplete="off"/>
+        <button id="voice-search-btn" class="voice-btn" title="Voice Search">ðŸŽ¤</button>
         <button class="icon-btn filter-btn" id="filter-toggle-btn" title="Filters">
           <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="filter-dot" id="filter-dot" style="display:none"></span>
@@ -253,7 +247,7 @@
       <div id="filter-panel" class="filter-panel" style="display:none">
         <div class="radius-slider-section">
           <div class="radius-slider-header">
-            <span class="filter-label">📏 Search Radius</span>
+            <span class="filter-label">ðŸ“ Search Radius</span>
             <span id="radius-display-val" class="radius-display">1km</span>
           </div>
           <input type="range" id="radius-slider" class="radius-slider" min="100" max="20000" step="100" value="1000"/>
@@ -270,17 +264,17 @@
         <div class="filter-row">
           <span class="filter-label">Sort</span>
           <div class="radius-pills">
-            <button class="sort-pill active" data-sort="distance">📏 Nearest</button>
-            <button class="sort-pill" data-sort="name">🔤 Name</button>
-            <button class="sort-pill" data-sort="rating">⭐ Rating</button>
+            <button class="sort-pill active" data-sort="distance">ðŸ“ Nearest</button>
+            <button class="sort-pill" data-sort="name">ðŸ”¤ Name</button>
+            <button class="sort-pill" data-sort="rating">â­ Rating</button>
           </div>
         </div>
         <div class="filter-row">
           <span class="filter-label">Filter</span>
           <div class="filter-toggles">
-            <label class="filter-chip-toggle"><input type="checkbox" id="filter-open"/><span>🕐 Open Now</span></label>
-            <label class="filter-chip-toggle"><input type="checkbox" id="filter-wheelchair"/><span>♿ Accessible</span></label>
-            <label class="filter-chip-toggle"><input type="checkbox" id="filter-radius-circle" checked/><span>⭕ Radius Ring</span></label>
+            <label class="filter-chip-toggle"><input type="checkbox" id="filter-open"/><span>ðŸ• Open Now</span></label>
+            <label class="filter-chip-toggle"><input type="checkbox" id="filter-wheelchair"/><span>â™¿ Accessible</span></label>
+            <label class="filter-chip-toggle"><input type="checkbox" id="filter-radius-circle" checked/><span>â­• Radius Ring</span></label>
           </div>
         </div>
       </div>
@@ -288,35 +282,35 @@
 
     <!-- Smart Suggestions -->
     <div class="suggestions-section">
-      <div class="suggestions-label">✨ Smart suggestions</div>
+      <div class="suggestions-label">âœ¨ Smart suggestions</div>
       <div class="suggestions-scroll" id="suggestions-scroll"></div>
     </div>
 
     <!-- Categories -->
     <div class="categories-section">
       <div class="categories-scroll">
-        <button class="cat-chip active" data-category="restaurant" data-query='["amenity"="restaurant"]'><span>🍽️</span>Restaurants</button>
-        <button class="cat-chip" data-category="hospital" data-query='["amenity"="hospital"]'><span>🏥</span>Hospitals</button>
-        <button class="cat-chip" data-category="doctor" data-query='["amenity"="doctor"]'><span>👨‍⚕️</span>Doctors</button>
-        <button class="cat-chip" data-category="pharmacy" data-query='["amenity"="pharmacy"]'><span>💊</span>Pharmacy</button>
-        <button class="cat-chip" data-category="toilet" data-query='["amenity"="toilets"]'><span>🚻</span>Restrooms</button>
-        <button class="cat-chip" data-category="atm" data-query='["amenity"="atm"]'><span>🏧</span>ATM</button>
-        <button class="cat-chip" data-category="bank" data-query='["amenity"="bank"]'><span>🏦</span>Banks</button>
-        <button class="cat-chip" data-category="cafe" data-query='["amenity"="cafe"]'><span>☕</span>Cafe</button>
-        <button class="cat-chip" data-category="fuel" data-query='["amenity"="fuel"]'><span>⛽</span>Petrol</button>
-        <button class="cat-chip" data-category="supermarket" data-query='["shop"="supermarket"]'><span>🛒</span>Grocery</button>
-        <button class="cat-chip" data-category="park" data-query='["leisure"="park"]'><span>🌳</span>Parks</button>
-        <button class="cat-chip" data-category="school" data-query='["amenity"="school"]'><span>🏫</span>Schools</button>
-        <button class="cat-chip" data-category="police" data-query='["amenity"="police"]'><span>🚔</span>Police</button>
-        <button class="cat-chip" data-category="hotel" data-query='["tourism"="hotel"]'><span>🏨</span>Hotels</button>
-        <button class="cat-chip" data-category="gym" data-query='["leisure"="fitness_centre"]'><span>💪</span>Gym</button>
-        <button class="cat-chip" data-category="cinema" data-query='["amenity"="cinema"]'><span>🎬</span>Cinema</button>
-        <button class="cat-chip" data-category="dentist" data-query='["amenity"="dentist"]'><span>🦷</span>Dentist</button>
-        <button class="cat-chip" data-category="library" data-query='["amenity"="library"]'><span>📚</span>Library</button>
-        <button class="cat-chip" data-category="bus_stop" data-query='["highway"="bus_stop"]'><span>🚌</span>Bus Stop</button>
-        <button class="cat-chip" data-category="post_office" data-query='["amenity"="post_office"]'><span>📮</span>Post Office</button>
-        <button class="cat-chip" data-category="parking" data-query='["amenity"="parking"]'><span>🅿️</span>Parking</button>
-        <button class="cat-chip" data-category="place_of_worship" data-query='["amenity"="place_of_worship"]'><span>🕌</span>Worship</button>
+        <button class="cat-chip active" data-category="restaurant" data-query='["amenity"="restaurant"]'><span>ðŸ½ï¸</span>Restaurants</button>
+        <button class="cat-chip" data-category="hospital" data-query='["amenity"="hospital"]'><span>ðŸ¥</span>Hospitals</button>
+        <button class="cat-chip" data-category="doctor" data-query='["amenity"="doctor"]'><span>ðŸ‘¨â€âš•ï¸</span>Doctors</button>
+        <button class="cat-chip" data-category="pharmacy" data-query='["amenity"="pharmacy"]'><span>ðŸ’Š</span>Pharmacy</button>
+        <button class="cat-chip" data-category="toilet" data-query='["amenity"="toilets"]'><span>ðŸš»</span>Restrooms</button>
+        <button class="cat-chip" data-category="atm" data-query='["amenity"="atm"]'><span>ðŸ§</span>ATM</button>
+        <button class="cat-chip" data-category="bank" data-query='["amenity"="bank"]'><span>ðŸ¦</span>Banks</button>
+        <button class="cat-chip" data-category="cafe" data-query='["amenity"="cafe"]'><span>â˜•</span>Cafe</button>
+        <button class="cat-chip" data-category="fuel" data-query='["amenity"="fuel"]'><span>â›½</span>Petrol</button>
+        <button class="cat-chip" data-category="supermarket" data-query='["shop"="supermarket"]'><span>ðŸ›’</span>Grocery</button>
+        <button class="cat-chip" data-category="park" data-query='["leisure"="park"]'><span>ðŸŒ³</span>Parks</button>
+        <button class="cat-chip" data-category="school" data-query='["amenity"="school"]'><span>ðŸ«</span>Schools</button>
+        <button class="cat-chip" data-category="police" data-query='["amenity"="police"]'><span>ðŸš”</span>Police</button>
+        <button class="cat-chip" data-category="hotel" data-query='["tourism"="hotel"]'><span>ðŸ¨</span>Hotels</button>
+        <button class="cat-chip" data-category="gym" data-query='["leisure"="fitness_centre"]'><span>ðŸ’ª</span>Gym</button>
+        <button class="cat-chip" data-category="cinema" data-query='["amenity"="cinema"]'><span>ðŸŽ¬</span>Cinema</button>
+        <button class="cat-chip" data-category="dentist" data-query='["amenity"="dentist"]'><span>ðŸ¦·</span>Dentist</button>
+        <button class="cat-chip" data-category="library" data-query='["amenity"="library"]'><span>ðŸ“š</span>Library</button>
+        <button class="cat-chip" data-category="bus_stop" data-query='["highway"="bus_stop"]'><span>ðŸšŒ</span>Bus Stop</button>
+        <button class="cat-chip" data-category="post_office" data-query='["amenity"="post_office"]'><span>ðŸ“®</span>Post Office</button>
+        <button class="cat-chip" data-category="parking" data-query='["amenity"="parking"]'><span>ðŸ…¿ï¸</span>Parking</button>
+        <button class="cat-chip" data-category="place_of_worship" data-query='["amenity"="place_of_worship"]'><span>ðŸ•Œ</span>Worship</button>
       </div>
     </div>
 
@@ -331,10 +325,10 @@
       </div>
       <div id="places-loading" class="loading-state" style="display:none">
         <div class="dot-spinner"><div></div><div></div><div></div><div></div></div>
-        <p>Finding places…</p>
+        <p>Finding placesâ€¦</p>
       </div>
       <div id="places-empty" class="empty-state" style="display:none">
-        <div class="empty-icon">🔍</div>
+        <div class="empty-icon">ðŸ”</div>
         <h3>No places found</h3>
         <p>Try widening the radius or a different category</p>
       </div>
@@ -346,25 +340,25 @@
       <div class="detail-panel-scroll">
         <!-- Hero -->
         <div class="detail-hero">
-          <div class="detail-emoji" id="detail-emoji">🍽️</div>
+          <div class="detail-emoji" id="detail-emoji">ðŸ½ï¸</div>
           <div class="detail-hero-info">
             <h2 id="detail-name">Place Name</h2>
             <div class="detail-cat-tag" id="detail-category-tag"></div>
             <div id="open-status-row" class="open-status-row" style="display:none">
-              <span class="open-status-badge open" id="open-status-badge">● Open</span>
+              <span class="open-status-badge open" id="open-status-badge">â— Open</span>
               <span class="open-status-hours" id="open-status-hours"></span>
             </div>
             <div class="star-rating" id="star-row">
-              <span class="star" data-v="1">★</span><span class="star" data-v="2">★</span><span class="star" data-v="3">★</span><span class="star" data-v="4">★</span><span class="star" data-v="5">★</span>
+              <span class="star" data-v="1">â˜…</span><span class="star" data-v="2">â˜…</span><span class="star" data-v="3">â˜…</span><span class="star" data-v="4">â˜…</span><span class="star" data-v="5">â˜…</span>
               <span class="rating-label" id="rating-label">Rate this place</span>
             </div>
             <div id="compass-row" class="compass-row" style="display:none">
-              <span class="compass-arrow" id="compass-arrow">🧭</span>
+              <span class="compass-arrow" id="compass-arrow">ðŸ§­</span>
               <span id="compass-bearing"></span>
               <span id="compass-dist-inline"></span>
             </div>
           </div>
-          <button class="close-detail-btn" id="close-detail">✕</button>
+          <button class="close-detail-btn" id="close-detail">âœ•</button>
         </div>
 
         <!-- Place Photo -->
@@ -376,37 +370,37 @@
         <div class="quick-stats">
           <div class="stat-card">
             <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
-            <div><div class="stat-label">Distance</div><div class="stat-value" id="detail-distance">—</div></div>
+            <div><div class="stat-label">Distance</div><div class="stat-value" id="detail-distance">â€”</div></div>
           </div>
           <div class="stat-card">
             <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M16 3.13a4 4 0 010 7.75M21 21v-2a4 4 0 00-3-3.87M13 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
-            <div><div class="stat-label">🚶 Walk ETA</div><div class="stat-value" id="detail-walk">—</div></div>
+            <div><div class="stat-label">ðŸš¶ Walk ETA</div><div class="stat-value" id="detail-walk">â€”</div></div>
           </div>
           <div class="stat-card">
             <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><rect x="1" y="3" width="15" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 8h4l3 3v5h-7V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
-            <div><div class="stat-label">🚗 Drive ETA</div><div class="stat-value" id="detail-drive">—</div></div>
+            <div><div class="stat-label">ðŸš— Drive ETA</div><div class="stat-value" id="detail-drive">â€”</div></div>
           </div>
         </div>
 
         <!-- Walkability -->
         <div class="walkability-row" id="walkability-row" style="display:none">
-          <span class="walkability-label">🚶 Walkability</span>
+          <span class="walkability-label">ðŸš¶ Walkability</span>
           <div class="walkability-bar-wrap"><div class="walkability-bar" id="walkability-bar" style="width:0%"></div></div>
           <span class="walkability-val" id="walkability-val">0/100</span>
         </div>
 
         <!-- Busy Hours -->
         <div class="busy-row" id="busy-row" style="display:none">
-          <div class="busy-label">📊 Busy Hours</div>
+          <div class="busy-label">ðŸ“Š Busy Hours</div>
           <div class="busy-bars" id="busy-bars"></div>
           <div class="busy-now" id="busy-now"></div>
         </div>
 
         <!-- Transport Mode -->
         <div class="transport-selector">
-          <button class="transport-btn active" data-mode="driving">🚗 Drive</button>
-          <button class="transport-btn" data-mode="walking">🚶 Walk</button>
-          <button class="transport-btn" data-mode="cycling">🚴 Cycle</button>
+          <button class="transport-btn active" data-mode="driving">ðŸš— Drive</button>
+          <button class="transport-btn" data-mode="walking">ðŸš¶ Walk</button>
+          <button class="transport-btn" data-mode="cycling">ðŸš´ Cycle</button>
         </div>
 
         <!-- Action Buttons -->
@@ -425,17 +419,17 @@
           </button>
         </div>
         <div class="quick-extra-actions">
-          <button class="extra-action-btn" id="btn-call" style="display:none">📞 Call</button>
-          <button class="extra-action-btn" id="btn-whatsapp-place" style="display:none">💬 WhatsApp</button>
-          <button class="extra-action-btn" id="btn-copy-addr">📋 Address</button>
-          <button class="extra-action-btn" id="btn-copy-coords">🌐 Coords</button>
-          <button class="extra-action-btn" id="btn-open-gmaps">🗺️ Google Maps</button>
-          <button class="extra-action-btn" id="btn-streetview">📸 Street View</button>
-          <button class="extra-action-btn" id="btn-qr">📱 QR Code</button>
-          <button class="extra-action-btn" id="btn-trip-add">🗺️ Add to Trip</button>
-          <button class="extra-action-btn" id="btn-voice-nav">🔊 Speak Info</button>
-          <button class="extra-action-btn" id="btn-print-dir">🖨️ Print Directions</button>
-          <button class="voice-toggle-btn" id="voice-toggle-btn" title="Voice Navigation">🔊</button>
+          <button class="extra-action-btn" id="btn-call" style="display:none">ðŸ“ž Call</button>
+          <button class="extra-action-btn" id="btn-whatsapp-place" style="display:none">ðŸ’¬ WhatsApp</button>
+          <button class="extra-action-btn" id="btn-copy-addr">ðŸ“‹ Address</button>
+          <button class="extra-action-btn" id="btn-copy-coords">ðŸŒ Coords</button>
+          <button class="extra-action-btn" id="btn-open-gmaps">ðŸ—ºï¸ Google Maps</button>
+          <button class="extra-action-btn" id="btn-streetview">ðŸ“¸ Street View</button>
+          <button class="extra-action-btn" id="btn-qr">ðŸ“± QR Code</button>
+          <button class="extra-action-btn" id="btn-trip-add">ðŸ—ºï¸ Add to Trip</button>
+          <button class="extra-action-btn" id="btn-voice-nav">ðŸ”Š Speak Info</button>
+          <button class="extra-action-btn" id="btn-print-dir">ðŸ–¨ï¸ Print Directions</button>
+          <button class="voice-toggle-btn" id="voice-toggle-btn" title="Voice Navigation">ðŸ”Š</button>
         </div>
 
         <!-- Info rows -->
@@ -443,15 +437,15 @@
 
         <!-- Wikipedia -->
         <div class="wiki-card" id="wiki-card" style="display:none">
-          <div class="wiki-header">📖 Wikipedia</div>
+          <div class="wiki-header">ðŸ“– Wikipedia</div>
           <div class="wiki-text" id="wiki-text"></div>
-          <a class="wiki-more" id="wiki-link" href="#" target="_blank" rel="noopener">Read more →</a>
+          <a class="wiki-more" id="wiki-link" href="#" target="_blank" rel="noopener">Read more â†’</a>
         </div>
 
         <!-- Notes -->
         <div class="notes-section">
-          <div class="notes-header">📝 Personal Note</div>
-          <textarea class="notes-textarea" id="place-notes" rows="2" placeholder="Add your note about this place…"></textarea>
+          <div class="notes-header">ðŸ“ Personal Note</div>
+          <textarea class="notes-textarea" id="place-notes" rows="2" placeholder="Add your note about this placeâ€¦"></textarea>
           <button class="notes-save-btn" id="notes-save">Save Note</button>
         </div>
 
@@ -460,7 +454,7 @@
           <div class="directions-title">
             <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Directions
-            <button class="voice-toggle-btn" id="voice-toggle-btn2" style="margin-left:auto">🔊</button>
+            <button class="voice-toggle-btn" id="voice-toggle-btn2" style="margin-left:auto">ðŸ”Š</button>
           </div>
           <div id="directions-steps"></div>
         </div>
@@ -472,44 +466,44 @@
       <!-- Trip -->
       <div id="trip-content" class="panel-content" style="display:none">
         <div class="panel-content-header">
-          <h2>🗺️ Trip Planner</h2>
-          <button class="close-panel-content">✕</button>
+          <h2>ðŸ—ºï¸ Trip Planner</h2>
+          <button class="close-panel-content">âœ•</button>
         </div>
         <div class="trip-info-row" id="trip-summary">Add places from the list to build your route.</div>
         <div class="trip-stops" id="trip-stops"></div>
-        <p id="trip-empty" class="empty-state" style="display:block;padding:20px 0"><span class="empty-icon">🗺️</span><br/>No stops yet. Browse places and tap "Add to Trip".</p>
+        <p id="trip-empty" class="empty-state" style="display:block;padding:20px 0"><span class="empty-icon">ðŸ—ºï¸</span><br/>No stops yet. Browse places and tap "Add to Trip".</p>
         <div class="trip-actions" id="trip-actions" style="display:none">
-          <button class="action-btn primary" id="btn-start-trip">🚀 Start Trip</button>
-          <button class="action-btn secondary" id="btn-copy-trip">📋 Copy as Text</button>
-          <button class="action-btn secondary" id="btn-clear-trip">🗑️ Clear</button>
+          <button class="action-btn primary" id="btn-start-trip">ðŸš€ Start Trip</button>
+          <button class="action-btn secondary" id="btn-copy-trip">ðŸ“‹ Copy as Text</button>
+          <button class="action-btn secondary" id="btn-clear-trip">ðŸ—‘ï¸ Clear</button>
         </div>
       </div>
       <!-- Saved -->
       <div id="saved-content" class="panel-content" style="display:none">
         <div class="panel-content-header">
-          <h2>❤️ Saved Places</h2>
-          <button class="close-panel-content">✕</button>
+          <h2>â¤ï¸ Saved Places</h2>
+          <button class="close-panel-content">âœ•</button>
         </div>
         <div style="display:flex;gap:8px;margin-bottom:12px">
-          <button class="extra-action-btn" id="export-saved">📤 Export</button>
-          <button class="extra-action-btn" id="clear-saved">🗑️ Clear All</button>
+          <button class="extra-action-btn" id="export-saved">ðŸ“¤ Export</button>
+          <button class="extra-action-btn" id="clear-saved">ðŸ—‘ï¸ Clear All</button>
         </div>
-        <p id="saved-empty" style="color:var(--muted);font-size:.84rem;text-align:center;padding:20px 0">No saved places yet. Tap ❤️ on a place to save it.</p>
+        <p id="saved-empty" style="color:var(--muted);font-size:.84rem;text-align:center;padding:20px 0">No saved places yet. Tap â¤ï¸ on a place to save it.</p>
         <div class="places-list" id="saved-list"></div>
       </div>
       <!-- Stats -->
       <div id="stats-content" class="panel-content" style="display:none">
         <div class="panel-content-header">
-          <h2>📊 My Stats</h2>
-          <button class="close-panel-content">✕</button>
+          <h2>ðŸ“Š My Stats</h2>
+          <button class="close-panel-content">âœ•</button>
         </div>
         <div class="stats-body" id="stats-body"></div>
       </div>
       <!-- Settings -->
       <div id="settings-content" class="panel-content" style="display:none">
         <div class="panel-content-header">
-          <h2>⚙️ Settings</h2>
-          <button class="close-panel-content">✕</button>
+          <h2>âš™ï¸ Settings</h2>
+          <button class="close-panel-content">âœ•</button>
         </div>
         <div class="settings-list">
           <div class="settings-group">
@@ -537,13 +531,13 @@
           <div class="settings-group">
             <h3>About</h3>
             <div class="setting-item about-item">
-              <div class="about-logo">📍</div>
-              <div class="setting-info"><div class="setting-name">NearMe v4.0</div><div class="setting-desc">Open-source · Leaflet · Overpass · OSRM · Nominatim</div></div>
+              <div class="about-logo">ðŸ“</div>
+              <div class="setting-info"><div class="setting-name">NearMe v4.0</div><div class="setting-desc">Open-source Â· Leaflet Â· Overpass Â· OSRM Â· Nominatim</div></div>
             </div>
           </div>
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
-          <button class="extra-action-btn" id="reset-stats-btn2" onclick="localStorage.clear();location.reload()">🗑️ Reset All Data</button>
+          <button class="extra-action-btn" id="reset-stats-btn2" onclick="localStorage.clear();location.reload()">ðŸ—‘ï¸ Reset All Data</button>
         </div>
       </div>
     </div>
@@ -577,37 +571,37 @@
   </nav>
 
   <!-- SOS FAB (mobile) -->
-  <button class="sos-fab" id="sos-fab" title="SOS Emergency">🆘</button>
+  <button class="sos-fab" id="sos-fab" title="SOS Emergency">ðŸ†˜</button>
 
 </div><!-- end app-wrapper -->
 
 <!-- MOBILE PANELS -->
 <div id="mobile-trip-panel" class="mobile-panel" style="display:none">
   <div class="mobile-panel-header">
-    <h2>🗺️ Trip Planner</h2>
-    <button class="close-mobile-panel" data-panel="mobile-trip-panel">✕</button>
+    <h2>ðŸ—ºï¸ Trip Planner</h2>
+    <button class="close-mobile-panel" data-panel="mobile-trip-panel">âœ•</button>
   </div>
   <div class="mobile-panel-body">
     <div class="trip-info-row" id="mob-trip-summary">Add places to build your route.</div>
     <div class="trip-stops" id="mob-trip-stops"></div>
     <p id="mob-trip-empty" style="color:var(--muted);font-size:.84rem;text-align:center;padding:20px 0">No stops yet.</p>
     <div class="trip-actions" id="mob-trip-actions" style="display:none">
-      <button class="action-btn primary" id="mob-btn-start-trip">🚀 Start Trip</button>
-      <button class="action-btn secondary" id="mob-btn-copy-trip">📋 Copy as Text</button>
-      <button class="action-btn secondary" id="mob-btn-clear-trip">🗑️ Clear</button>
+      <button class="action-btn primary" id="mob-btn-start-trip">ðŸš€ Start Trip</button>
+      <button class="action-btn secondary" id="mob-btn-copy-trip">ðŸ“‹ Copy as Text</button>
+      <button class="action-btn secondary" id="mob-btn-clear-trip">ðŸ—‘ï¸ Clear</button>
     </div>
   </div>
 </div>
 
 <div id="mobile-saved-panel" class="mobile-panel" style="display:none">
   <div class="mobile-panel-header">
-    <h2>❤️ Saved Places</h2>
-    <button class="close-mobile-panel" data-panel="mobile-saved-panel">✕</button>
+    <h2>â¤ï¸ Saved Places</h2>
+    <button class="close-mobile-panel" data-panel="mobile-saved-panel">âœ•</button>
   </div>
   <div class="mobile-panel-body">
     <div style="display:flex;gap:8px;margin-bottom:12px">
-      <button class="extra-action-btn" id="mob-export-saved">📤 Export</button>
-      <button class="extra-action-btn" id="mob-clear-saved">🗑️ Clear</button>
+      <button class="extra-action-btn" id="mob-export-saved">ðŸ“¤ Export</button>
+      <button class="extra-action-btn" id="mob-clear-saved">ðŸ—‘ï¸ Clear</button>
     </div>
     <p id="mob-saved-empty" style="color:var(--muted);font-size:.84rem;text-align:center;padding:20px 0">No saved places.</p>
     <div class="places-list" id="mob-saved-list"></div>
@@ -617,16 +611,16 @@
 <div id="mobile-more-panel" class="mobile-panel" style="display:none">
   <div class="mobile-panel-header">
     <h2>More</h2>
-    <button class="close-mobile-panel" data-panel="mobile-more-panel">✕</button>
+    <button class="close-mobile-panel" data-panel="mobile-more-panel">âœ•</button>
   </div>
   <div class="mobile-panel-body">
     <div class="more-grid">
-      <div class="more-item" id="mob-stats-btn"><div class="more-icon">📊</div>My Stats</div>
-      <div class="more-item" id="mob-settings-btn"><div class="more-icon">⚙️</div>Settings</div>
-      <div class="more-item" id="mob-sos-btn-more"><div class="more-icon">🆘</div>SOS Emergency</div>
-      <div class="more-item" id="mob-weather-btn"><div class="more-icon">🌤️</div>Weather</div>
-      <div class="more-item" id="mob-track-btn"><div class="more-icon">📡</div>Live Track</div>
-      <div class="more-item" id="mob-share-loc"><div class="more-icon">📍</div>Share Location</div>
+      <div class="more-item" id="mob-stats-btn"><div class="more-icon">ðŸ“Š</div>My Stats</div>
+      <div class="more-item" id="mob-settings-btn"><div class="more-icon">âš™ï¸</div>Settings</div>
+      <div class="more-item" id="mob-sos-btn-more"><div class="more-icon">ðŸ†˜</div>SOS Emergency</div>
+      <div class="more-item" id="mob-weather-btn"><div class="more-icon">ðŸŒ¤ï¸</div>Weather</div>
+      <div class="more-item" id="mob-track-btn"><div class="more-icon">ðŸ“¡</div>Live Track</div>
+      <div class="more-item" id="mob-share-loc"><div class="more-icon">ðŸ“</div>Share Location</div>
     </div>
     <!-- Mobile Settings quick -->
     <div class="settings-list" style="margin-top:18px">
@@ -644,8 +638,8 @@
 
 <div id="mobile-stats-panel" class="mobile-panel" style="display:none">
   <div class="mobile-panel-header">
-    <h2>📊 My Stats</h2>
-    <button class="close-mobile-panel" data-panel="mobile-stats-panel">✕</button>
+    <h2>ðŸ“Š My Stats</h2>
+    <button class="close-mobile-panel" data-panel="mobile-stats-panel">âœ•</button>
   </div>
   <div class="mobile-panel-body"><div class="stats-body" id="mob-stats-body"></div></div>
 </div>
@@ -656,20 +650,20 @@
   <div class="drawer-handle"></div>
   <div class="mob-detail-scroll">
     <div class="detail-hero">
-      <div class="detail-emoji" id="mob-detail-emoji">📍</div>
+      <div class="detail-emoji" id="mob-detail-emoji">ðŸ“</div>
       <div class="detail-hero-info">
         <h2 id="mob-detail-name">Place</h2>
         <div class="detail-cat-tag" id="mob-detail-cat"></div>
         <div id="mob-open-status" class="open-status-row" style="display:none">
-          <span class="open-status-badge open" id="mob-open-badge">● Open</span>
+          <span class="open-status-badge open" id="mob-open-badge">â— Open</span>
           <span class="open-status-hours" id="mob-open-hours"></span>
         </div>
         <div class="star-rating">
-          <span class="mob-star" data-v="1">★</span><span class="mob-star" data-v="2">★</span><span class="mob-star" data-v="3">★</span><span class="mob-star" data-v="4">★</span><span class="mob-star" data-v="5">★</span>
+          <span class="mob-star" data-v="1">â˜…</span><span class="mob-star" data-v="2">â˜…</span><span class="mob-star" data-v="3">â˜…</span><span class="mob-star" data-v="4">â˜…</span><span class="mob-star" data-v="5">â˜…</span>
           <span class="rating-label" id="mob-rating-label">Rate</span>
         </div>
       </div>
-      <button class="close-detail-btn" id="mob-close-detail">✕</button>
+      <button class="close-detail-btn" id="mob-close-detail">âœ•</button>
     </div>
 
     <div id="mob-place-photo-wrap" class="place-photo-wrap" style="display:none">
@@ -677,15 +671,15 @@
     </div>
 
     <div class="quick-stats">
-      <div class="stat-card"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg><div><div class="stat-label">Distance</div><div class="stat-value" id="mob-distance">—</div></div></div>
-      <div class="stat-card"><span style="font-size:.9rem">🚶</span><div><div class="stat-label">Walk</div><div class="stat-value" id="mob-walk">—</div></div></div>
-      <div class="stat-card"><span style="font-size:.9rem">🚗</span><div><div class="stat-label">Drive</div><div class="stat-value" id="mob-drive">—</div></div></div>
+      <div class="stat-card"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/></svg><div><div class="stat-label">Distance</div><div class="stat-value" id="mob-distance">â€”</div></div></div>
+      <div class="stat-card"><span style="font-size:.9rem">ðŸš¶</span><div><div class="stat-label">Walk</div><div class="stat-value" id="mob-walk">â€”</div></div></div>
+      <div class="stat-card"><span style="font-size:.9rem">ðŸš—</span><div><div class="stat-label">Drive</div><div class="stat-value" id="mob-drive">â€”</div></div></div>
     </div>
 
     <div class="transport-selector">
-      <button class="transport-btn active" data-mode="driving">🚗</button>
-      <button class="transport-btn" data-mode="walking">🚶</button>
-      <button class="transport-btn" data-mode="cycling">🚴</button>
+      <button class="transport-btn active" data-mode="driving">ðŸš—</button>
+      <button class="transport-btn" data-mode="walking">ðŸš¶</button>
+      <button class="transport-btn" data-mode="cycling">ðŸš´</button>
     </div>
 
     <div class="detail-actions">
@@ -693,34 +687,34 @@
         <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Directions
       </button>
-      <button class="action-btn secondary" id="mob-btn-save">❤️ Save</button>
-      <button class="action-btn secondary" id="mob-btn-share">🔗 Share</button>
+      <button class="action-btn secondary" id="mob-btn-save">â¤ï¸ Save</button>
+      <button class="action-btn secondary" id="mob-btn-share">ðŸ”— Share</button>
     </div>
     <div class="quick-extra-actions">
-      <button class="extra-action-btn" id="mob-btn-call" style="display:none">📞 Call</button>
-      <button class="extra-action-btn" id="mob-btn-wa" style="display:none">💬 WhatsApp</button>
-      <button class="extra-action-btn" id="mob-btn-addr">📋 Address</button>
-      <button class="extra-action-btn" id="mob-btn-gmaps">🗺️ Google Maps</button>
-      <button class="extra-action-btn" id="mob-btn-coords">🌐 Coords</button>
-      <button class="extra-action-btn" id="mob-btn-sv">📸 Street View</button>
-      <button class="extra-action-btn" id="mob-btn-qr">📱 QR Code</button>
-      <button class="extra-action-btn" id="mob-btn-trip">➕ Add to Trip</button>
-      <button class="extra-action-btn" id="mob-btn-voice">🔊 Speak</button>
-      <button class="extra-action-btn" id="mob-btn-print">🖨️ Print Dir.</button>
-      <button class="voice-toggle-btn" id="mob-voice-toggle">🔊</button>
+      <button class="extra-action-btn" id="mob-btn-call" style="display:none">ðŸ“ž Call</button>
+      <button class="extra-action-btn" id="mob-btn-wa" style="display:none">ðŸ’¬ WhatsApp</button>
+      <button class="extra-action-btn" id="mob-btn-addr">ðŸ“‹ Address</button>
+      <button class="extra-action-btn" id="mob-btn-gmaps">ðŸ—ºï¸ Google Maps</button>
+      <button class="extra-action-btn" id="mob-btn-coords">ðŸŒ Coords</button>
+      <button class="extra-action-btn" id="mob-btn-sv">ðŸ“¸ Street View</button>
+      <button class="extra-action-btn" id="mob-btn-qr">ðŸ“± QR Code</button>
+      <button class="extra-action-btn" id="mob-btn-trip">âž• Add to Trip</button>
+      <button class="extra-action-btn" id="mob-btn-voice">ðŸ”Š Speak</button>
+      <button class="extra-action-btn" id="mob-btn-print">ðŸ–¨ï¸ Print Dir.</button>
+      <button class="voice-toggle-btn" id="mob-voice-toggle">ðŸ”Š</button>
     </div>
 
     <div class="detail-info-list" id="mob-info-list"></div>
 
     <div class="wiki-card" id="mob-wiki-card" style="display:none">
-      <div class="wiki-header">📖 Wikipedia</div>
+      <div class="wiki-header">ðŸ“– Wikipedia</div>
       <div class="wiki-text" id="mob-wiki-text"></div>
-      <a class="wiki-more" id="mob-wiki-link" href="#" target="_blank" rel="noopener">Read more →</a>
+      <a class="wiki-more" id="mob-wiki-link" href="#" target="_blank" rel="noopener">Read more â†’</a>
     </div>
 
     <div class="notes-section">
-      <div class="notes-header">📝 My Note</div>
-      <textarea class="notes-textarea" id="mob-notes" rows="2" placeholder="Add a note…"></textarea>
+      <div class="notes-header">ðŸ“ My Note</div>
+      <textarea class="notes-textarea" id="mob-notes" rows="2" placeholder="Add a noteâ€¦"></textarea>
       <button class="notes-save-btn" id="mob-notes-save">Save Note</button>
     </div>
 
@@ -728,7 +722,7 @@
       <div class="directions-title">
         <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Directions
-        <button class="voice-toggle-btn" id="mob-voice-toggle2" style="margin-left:auto">🔊</button>
+        <button class="voice-toggle-btn" id="mob-voice-toggle2" style="margin-left:auto">ðŸ”Š</button>
       </div>
       <div id="mob-direction-steps"></div>
     </div>
@@ -740,40 +734,40 @@
   <div class="modal-box sos-box">
     <div class="sos-header">
       <div class="sos-pulse"></div>
-      <h2>🆘 SOS Emergency</h2>
-      <button id="close-sos" style="margin-left:auto;font-size:1.2rem;color:var(--muted)">✕</button>
+      <h2>ðŸ†˜ SOS Emergency</h2>
+      <button id="close-sos" style="margin-left:auto;font-size:1.2rem;color:var(--muted)">âœ•</button>
     </div>
     <div class="sos-desc">Your location is being shared. Call emergency services:</div>
     <div class="sos-location-row">
-      <span id="sos-location">📍 Locating…</span>
-      <span id="sos-battery" class="sos-battery">🔋 —</span>
+      <span id="sos-location">ðŸ“ Locatingâ€¦</span>
+      <span id="sos-battery" class="sos-battery">ðŸ”‹ â€”</span>
     </div>
     <div class="sos-grid">
-      <a href="tel:112" class="sos-btn sos-all"><span class="sos-icon">🆘</span><span class="sos-label">All Emergency</span><span class="sos-num">112</span></a>
-      <a href="tel:100" class="sos-btn sos-police"><span class="sos-icon">🚔</span><span class="sos-label">Police</span><span class="sos-num">100</span></a>
-      <a href="tel:108" class="sos-btn sos-ambulance"><span class="sos-icon">🚑</span><span class="sos-label">Ambulance</span><span class="sos-num">108</span></a>
-      <a href="tel:101" class="sos-btn sos-fire"><span class="sos-icon">🚒</span><span class="sos-label">Fire</span><span class="sos-num">101</span></a>
-      <a href="tel:1091" class="sos-btn sos-women"><span class="sos-icon">👩</span><span class="sos-label">Women</span><span class="sos-num">1091</span></a>
-      <a href="tel:1098" class="sos-btn sos-child"><span class="sos-icon">👶</span><span class="sos-label">Child</span><span class="sos-num">1098</span></a>
+      <a href="tel:112" class="sos-btn sos-all"><span class="sos-icon">ðŸ†˜</span><span class="sos-label">All Emergency</span><span class="sos-num">112</span></a>
+      <a href="tel:100" class="sos-btn sos-police"><span class="sos-icon">ðŸš”</span><span class="sos-label">Police</span><span class="sos-num">100</span></a>
+      <a href="tel:108" class="sos-btn sos-ambulance"><span class="sos-icon">ðŸš‘</span><span class="sos-label">Ambulance</span><span class="sos-num">108</span></a>
+      <a href="tel:101" class="sos-btn sos-fire"><span class="sos-icon">ðŸš’</span><span class="sos-label">Fire</span><span class="sos-num">101</span></a>
+      <a href="tel:1091" class="sos-btn sos-women"><span class="sos-icon">ðŸ‘©</span><span class="sos-label">Women</span><span class="sos-num">1091</span></a>
+      <a href="tel:1098" class="sos-btn sos-child"><span class="sos-icon">ðŸ‘¶</span><span class="sos-label">Child</span><span class="sos-num">1098</span></a>
     </div>
     <!-- Family Contacts -->
     <div class="family-section">
       <div class="family-section-header">
-        👨‍👩‍👧 Family Contacts
+        ðŸ‘¨â€ðŸ‘©â€ðŸ‘§ Family Contacts
         <button class="add-contact-toggle" id="add-contact-toggle">+ Add</button>
       </div>
       <div class="add-contact-form" id="add-contact-form" style="display:none">
         <input type="text" class="contact-input" id="contact-name" placeholder="Name (e.g. Mom)"/>
         <input type="tel" class="contact-input" id="contact-phone" placeholder="Phone (+91XXXXXXXXXX)"/>
         <div style="display:flex;gap:8px;margin-top:4px">
-          <button class="save-contact-btn" id="save-contact-btn">✅ Save</button>
+          <button class="save-contact-btn" id="save-contact-btn">âœ… Save</button>
           <button class="cancel-contact-btn" id="cancel-contact-btn">Cancel</button>
         </div>
       </div>
       <div id="contacts-list" class="contacts-list"></div>
       <div id="contacts-empty" class="contacts-empty">No contacts added yet</div>
     </div>
-    <button class="sos-share-all-btn" id="sos-share-all" style="display:none">💬 Send WhatsApp SOS to All Family</button>
+    <button class="sos-share-all-btn" id="sos-share-all" style="display:none">ðŸ’¬ Send WhatsApp SOS to All Family</button>
   </div>
 </div>
 
@@ -781,8 +775,8 @@
 <div id="weather-modal" class="modal-overlay" style="display:none">
   <div class="modal-box weather-box">
     <div class="modal-header">
-      <h2>🌤️ Weather Forecast</h2>
-      <button id="close-weather" style="font-size:1.2rem;color:var(--muted)">✕</button>
+      <h2>ðŸŒ¤ï¸ Weather Forecast</h2>
+      <button id="close-weather" style="font-size:1.2rem;color:var(--muted)">âœ•</button>
     </div>
     <div class="weather-now" id="weather-now"></div>
     <div class="weather-forecast-grid" id="weather-forecast-grid"></div>
@@ -793,21 +787,21 @@
 <div id="qr-modal" class="modal-overlay" style="display:none">
   <div class="modal-box">
     <div class="modal-header">
-      <h2>📱 Share via QR</h2>
-      <button id="close-qr" style="font-size:1.2rem;color:var(--muted)">✕</button>
+      <h2>ðŸ“± Share via QR</h2>
+      <button id="close-qr" style="font-size:1.2rem;color:var(--muted)">âœ•</button>
     </div>
     <div class="qr-place-name" id="qr-place-name"></div>
     <div class="qr-img-wrap"><img id="qr-img" alt="QR Code" width="180" height="180"/></div>
     <p class="qr-hint">Scan to open on another device</p>
-    <button class="action-btn secondary" id="qr-whatsapp" style="margin-top:12px;width:100%">💬 Share on WhatsApp</button>
+    <button class="action-btn secondary" id="qr-whatsapp" style="margin-top:12px;width:100%">ðŸ’¬ Share on WhatsApp</button>
   </div>
 </div>
 
 <!-- AUTH MODAL -->
 <div id="auth-modal" class="auth-modal-overlay" style="display:none">
   <div class="auth-modal-box">
-    <button id="auth-modal-close" class="auth-modal-close">✕</button>
-    <div class="auth-modal-logo">📍</div>
+    <button id="auth-modal-close" class="auth-modal-close">âœ•</button>
+    <div class="auth-modal-logo">ðŸ“</div>
     <h2 class="auth-modal-title">Welcome to NearMe</h2>
     <p class="auth-modal-sub">Sign in to save places & sync across devices</p>
     <div class="auth-tabs">
@@ -825,11 +819,11 @@
           <label>Password</label>
           <div class="auth-pass-wrap">
             <input id="signin-pass" class="auth-input" type="password" placeholder="Your password" required autocomplete="current-password"/>
-            <button type="button" class="pass-toggle" data-target="signin-pass">👁️</button>
+            <button type="button" class="pass-toggle" data-target="signin-pass">ðŸ‘ï¸</button>
           </div>
         </div>
         <div id="signin-error" class="auth-error"></div>
-        <button type="submit" class="auth-submit-btn">Sign In →</button>
+        <button type="submit" class="auth-submit-btn">Sign In â†’</button>
       </form>
       <p class="auth-switch">No account? <a href="#" id="auth-goto-signup">Create one free</a></p>
     </div>
@@ -848,18 +842,18 @@
           <label>Password</label>
           <div class="auth-pass-wrap">
             <input id="signup-pass" class="auth-input" type="password" placeholder="Min 6 characters" required autocomplete="new-password"/>
-            <button type="button" class="pass-toggle" data-target="signup-pass">👁️</button>
+            <button type="button" class="pass-toggle" data-target="signup-pass">ðŸ‘ï¸</button>
           </div>
         </div>
         <div class="auth-field">
           <label>Confirm Password</label>
           <div class="auth-pass-wrap">
             <input id="signup-pass2" class="auth-input" type="password" placeholder="Repeat password" required autocomplete="new-password"/>
-            <button type="button" class="pass-toggle" data-target="signup-pass2">👁️</button>
+            <button type="button" class="pass-toggle" data-target="signup-pass2">ðŸ‘ï¸</button>
           </div>
         </div>
         <div id="signup-error" class="auth-error"></div>
-        <button type="submit" class="auth-submit-btn">Create Account →</button>
+        <button type="submit" class="auth-submit-btn">Create Account â†’</button>
       </form>
       <p class="auth-switch">Have account? <a href="#" id="auth-goto-signin">Sign in</a></p>
     </div>
@@ -869,103 +863,19 @@
 <!-- PROFILE MODAL -->
 <div id="profile-modal" class="auth-modal-overlay" style="display:none">
   <div class="auth-modal-box profile-modal-box">
-    <button id="profile-modal-close" class="auth-modal-close">✕</button>
-    <div class="profile-avatar-big" id="profile-avatar-display">🧑</div>
+    <button id="profile-modal-close" class="auth-modal-close">âœ•</button>
+    <div class="profile-avatar-big" id="profile-avatar-display">ðŸ§‘</div>
     <div class="profile-name" id="profile-name-display"></div>
     <div class="profile-email" id="profile-email-display"></div>
     <div class="profile-plan" id="profile-plan-display">FREE</div>
     <div class="profile-section-title">Choose Avatar</div>
     <div class="avatar-grid">
-      <span class="avatar-option">🧑</span><span class="avatar-option">👩</span>
-      <span class="avatar-option">👨</span><span class="avatar-option">🧔</span>
-      <span class="avatar-option">👱</span><span class="avatar-option">🧕</span>
-      <span class="avatar-option">🧑‍💻</span><span class="avatar-option">👩‍💻</span>
-      <span class="avatar-option">🧑‍🎓</span><span class="avatar-option">👩‍🎓</span>
-      <span class="avatar-option">🧑‍🍳</span><span class="avatar-option">🦸</span>
-    </div>
-  </div>
-</div>
-
-<!-- SUBSCRIPTION MODAL -->
-<div id="sub-modal" class="sub-modal-overlay" style="display:none">
-  <div class="sub-modal-box">
-    <button class="sub-modal-close" onclick="hideSubscriptionModal()">✕</button>
-    <div id="sub-main-view">
-      <div class="sub-header">
-        <div class="sub-logo">⚡</div>
-        <h2 class="sub-title">Upgrade NearMe</h2>
-        <p class="sub-subtitle">Unlock unlimited searches, all categories, voice navigation & more</p>
-      </div>
-      <!-- PLANS -->
-      <div class="sub-plans">
-        <!-- FREE -->
-        <div class="sub-plan" id="plan-free">
-          <div class="sub-plan-top">
-            <div class="sub-plan-name">Free</div>
-            <div class="sub-plan-price">₹0<span class="sub-plan-per">/mo</span></div>
-          </div>
-          <ul class="sub-plan-features">
-            <li>✅ 5 searches/day</li>
-            <li>✅ 500m max radius</li>
-            <li>✅ Basic map</li>
-            <li>✅ Save 5 places</li>
-            <li class="dim">❌ Voice navigation</li>
-            <li class="dim">❌ Trip planner</li>
-            <li class="dim">❌ Offline mode</li>
-          </ul>
-          <button class="sub-plan-btn outline" disabled>Current Plan</button>
-        </div>
-        <!-- PRO -->
-        <div class="sub-plan featured" id="plan-pro">
-          <div class="sub-plan-badge">⭐ POPULAR</div>
-          <div class="sub-plan-top">
-            <div class="sub-plan-name">Pro</div>
-            <div class="sub-plan-price">₹99<span class="sub-plan-per">/mo</span></div>
-          </div>
-          <ul class="sub-plan-features">
-            <li>✅ Unlimited searches</li>
-            <li>✅ 20km max radius</li>
-            <li>✅ All 22 categories</li>
-            <li>✅ Save unlimited places</li>
-            <li>✅ Voice navigation 🔊</li>
-            <li>✅ Trip planner 🗓️</li>
-            <li>✅ Offline mode 📡</li>
-          </ul>
-          <button class="sub-plan-btn" onclick="startPayment('pro',99)">Get Pro →</button>
-        </div>
-        <!-- BUSINESS -->
-        <div class="sub-plan" id="plan-business">
-          <div class="sub-plan-top">
-            <div class="sub-plan-name">Business</div>
-            <div class="sub-plan-price">₹499<span class="sub-plan-per">/mo</span></div>
-          </div>
-          <ul class="sub-plan-features">
-            <li>✅ Everything in Pro</li>
-            <li>✅ Admin dashboard</li>
-            <li>✅ User analytics</li>
-            <li>✅ API access</li>
-            <li>✅ Custom branding</li>
-            <li>✅ Priority support 24/7</li>
-            <li>✅ Export all data</li>
-          </ul>
-          <button class="sub-plan-btn" onclick="startPayment('business',499)">Get Business →</button>
-        </div>
-      </div>
-      <div class="sub-footer">🔒 Secure payment via Razorpay · Cancel anytime · Instant activation</div>
-    </div>
-    <!-- SUCCESS VIEW -->
-    <div id="sub-success-view" style="display:none;text-align:center;padding:40px 24px">
-      <div class="sub-success-anim">🎉</div>
-      <h2 style="font-size:1.4rem;font-weight:900;margin:16px 0 8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Welcome to Pro!</h2>
-      <p style="color:var(--txt2);font-size:.86rem;margin-bottom:24px">Your subscription is now active. All features are unlocked!</p>
-      <div class="sub-success-features">
-        <span>🔍 Unlimited searches</span>
-        <span>🗺️ 20km radius</span>
-        <span>🔊 Voice nav</span>
-        <span>🗓️ Trip planner</span>
-        <span>📡 Offline mode</span>
-      </div>
-      <button class="sub-plan-btn" style="margin-top:24px;width:auto;padding:12px 32px" onclick="hideSubscriptionModal()">Start Exploring! →</button>
+      <span class="avatar-option">ðŸ§‘</span><span class="avatar-option">ðŸ‘©</span>
+      <span class="avatar-option">ðŸ‘¨</span><span class="avatar-option">ðŸ§”</span>
+      <span class="avatar-option">ðŸ‘±</span><span class="avatar-option">ðŸ§•</span>
+      <span class="avatar-option">ðŸ§‘â€ðŸ’»</span><span class="avatar-option">ðŸ‘©â€ðŸ’»</span>
+      <span class="avatar-option">ðŸ§‘â€ðŸŽ“</span><span class="avatar-option">ðŸ‘©â€ðŸŽ“</span>
+      <span class="avatar-option">ðŸ§‘â€ðŸ³</span><span class="avatar-option">ðŸ¦¸</span>
     </div>
   </div>
 </div>
@@ -974,8 +884,6 @@
 <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
 <script src="tracker.js"></script>
 <script src="auth.js"></script>
-<script src="subscription.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
-
