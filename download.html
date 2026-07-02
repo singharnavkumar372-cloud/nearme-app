@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Download NearMe App — Android, iPhone & Desktop</title>
+  <meta name="description" content="Download NearMe free app for Android, iPhone or Desktop. Find hospitals, restaurants, ATMs and more near you instantly."/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#6c63ff"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#07070f;color:#eeeeff;min-height:100vh;overflow-x:hidden;}
+
+    /* Background */
+    body::before{content:'';position:fixed;inset:0;
+      background:radial-gradient(ellipse at 20% 10%,rgba(108,99,255,.25) 0%,transparent 50%),
+                 radial-gradient(ellipse at 80% 80%,rgba(255,101,132,.15) 0%,transparent 50%);
+      pointer-events:none;}
+
+    /* NAV */
+    nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;position:sticky;top:0;z-index:100;
+      background:rgba(7,7,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+    .nav-logo{font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,#6c63ff,#ff6584);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-link{color:#9090b8;text-decoration:none;font-size:.85rem;font-weight:500;padding:8px 16px;
+      border-radius:8px;transition:.15s;}
+    .nav-link:hover{color:#eeeeff;background:rgba(255,255,255,.05);}
+    .nav-open{background:linear-gradient(135deg,#6c63ff,#ff6584);color:#fff;padding:9px 20px;
+      border-radius:10px;font-weight:700;text-decoration:none;font-size:.85rem;transition:.15s;}
+    .nav-open:hover{opacity:.9;transform:translateY(-1px);}
+
+    /* HERO */
+    .hero{text-align:center;padding:80px 20px 60px;max-width:800px;margin:0 auto;}
+    .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(108,99,255,.12);
+      border:1px solid rgba(108,99,255,.3);border-radius:99px;padding:6px 16px;font-size:.78rem;
+      font-weight:600;color:#a78bfa;margin-bottom:24px;}
+    .hero-icon{font-size:5rem;margin-bottom:16px;display:block;animation:float 3s ease-in-out infinite;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    h1{font-size:3rem;font-weight:900;line-height:1.15;margin-bottom:16px;}
+    h1 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero-sub{font-size:1.05rem;color:#9090b8;line-height:1.7;margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;}
+    .hero-url{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 20px;font-size:.9rem;
+      font-weight:600;color:#a78bfa;margin-bottom:40px;cursor:pointer;transition:.2s;}
+    .hero-url:hover{background:rgba(108,99,255,.1);border-color:rgba(108,99,255,.4);}
+    .copy-badge{background:rgba(108,99,255,.2);border-radius:6px;padding:3px 10px;font-size:.72rem;color:#c4b5fd;}
+
+    /* PLATFORM CARDS */
+    .platforms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+      max-width:960px;margin:0 auto 80px;padding:0 20px;}
+    .platform-card{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.08);
+      border-radius:20px;padding:28px 24px;text-align:center;transition:.25s;position:relative;overflow:hidden;}
+    .platform-card:hover{border-color:rgba(108,99,255,.4);transform:translateY(-4px);
+      box-shadow:0 20px 50px rgba(108,99,255,.15);}
+    .platform-card.featured{border-color:rgba(108,99,255,.35);background:rgba(108,99,255,.06);}
+    .platform-card.featured::before{content:'RECOMMENDED';position:absolute;top:0;left:50%;
+      transform:translateX(-50%);background:linear-gradient(135deg,#6c63ff,#ff6584);color:#fff;
+      font-size:.6rem;font-weight:800;padding:4px 14px;border-radius:0 0 10px 10px;letter-spacing:.1em;}
+    .platform-icon{font-size:3rem;margin-bottom:14px;display:block;}
+    .platform-name{font-size:1.1rem;font-weight:800;margin-bottom:6px;}
+    .platform-desc{font-size:.8rem;color:#9090b8;line-height:1.6;margin-bottom:20px;}
+    .platform-steps{text-align:left;margin-bottom:20px;}
+    .step{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+    .step-num{background:rgba(108,99,255,.2);color:#a78bfa;width:22px;height:22px;border-radius:50%;
+      font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .step-text{font-size:.78rem;color:#c8c8e8;line-height:1.5;}
+    .dl-btn{display:block;width:100%;padding:13px;background:linear-gradient(135deg,#6c63ff,#ff6584);
+      border:none;border-radius:12px;color:#fff;font-size:.88rem;font-weight:700;cursor:pointer;
+      font-family:inherit;text-decoration:none;transition:.2s;box-shadow:0 4px 20px rgba(108,99,255,.3);}
+    .dl-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(108,99,255,.5);}
+    .dl-btn.outline{background:none;border:1.5px solid rgba(255,255,255,.15);color:#eeeeff;box-shadow:none;}
+    .dl-btn.outline:hover{border-color:rgba(108,99,255,.5);color:#a78bfa;}
+    .dl-btn.green{background:linear-gradient(135deg,#22c55e,#16a34a);box-shadow:0 4px 20px rgba(34,197,94,.3);}
+    .dl-btn.green:hover{box-shadow:0 6px 28px rgba(34,197,94,.5);}
+
+    /* FEATURES STRIP */
+    .features-strip{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;max-width:800px;
+      margin:0 auto 64px;padding:0 20px;}
+    .feat{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);border-radius:99px;padding:8px 16px;font-size:.78rem;color:#c8c8e8;}
+
+    /* PWA BUILDER */
+    .pwabuilder-section{max-width:700px;margin:0 auto 80px;padding:0 20px;text-align:center;}
+    .pwabuilder-card{background:rgba(255,255,255,.04);border:1.5px solid rgba(34,197,94,.25);
+      border-radius:20px;padding:32px 28px;}
+    .pwabuilder-card h2{font-size:1.3rem;font-weight:800;margin-bottom:8px;}
+    .pwabuilder-card p{color:#9090b8;font-size:.84rem;line-height:1.6;margin-bottom:20px;}
+    .pwa-steps{display:flex;flex-direction:column;gap:10px;text-align:left;margin-bottom:24px;}
+    .pwa-step{display:flex;align-items:center;gap:12px;padding:12px 16px;
+      background:rgba(255,255,255,.04);border-radius:10px;}
+    .pwa-step-num{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;
+      width:28px;height:28px;border-radius:50%;font-size:.8rem;font-weight:800;
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .pwa-step-text{font-size:.82rem;color:#c8c8e8;}
+    .pwa-step-text strong{color:#eeeeff;}
+    .url-box{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.3);border-radius:8px;
+      padding:10px 16px;font-size:.84rem;color:#a78bfa;font-family:monospace;word-break:break-all;margin-bottom:16px;}
+
+    /* QR */
+    .qr-section{max-width:400px;margin:0 auto 80px;padding:0 20px;text-align:center;}
+    .qr-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px;}
+    .qr-title{font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+    .qr-sub{color:#9090b8;font-size:.8rem;margin-bottom:20px;}
+    .qr-code{width:160px;height:160px;background:#fff;border-radius:12px;margin:0 auto 16px;
+      display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;}
+    .qr-code img{width:100%;height:100%;}
+
+    /* TOAST */
+    #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+      background:#1a1a2e;border:1px solid rgba(108,99,255,.4);color:#eeeeff;
+      padding:10px 22px;border-radius:99px;font-size:.82rem;font-weight:600;
+      display:none;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,.5);}
+
+    @media(max-width:640px){
+      h1{font-size:2rem;}
+      .hero{padding:50px 16px 40px;}
+      nav{padding:14px 16px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">📍 NearMe</div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <a href="index.html" class="nav-link">Open App</a>
+    <a href="index.html" class="nav-open">Launch →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">⚡ Free · No Login Required · Works Offline</div>
+  <span class="hero-icon">📍</span>
+  <h1>Download <span>NearMe</span><br/>on Any Device</h1>
+  <p class="hero-sub">Find hospitals, restaurants, ATMs, pharmacies and 22+ types of places near you — instantly. Works on Android, iPhone and Desktop.</p>
+
+  <div class="hero-url" onclick="copyUrl()" title="Click to copy">
+    <span>🔗</span>
+    <span id="app-url">singharnavkumar372-cloud.github.io/nearme-app</span>
+    <span class="copy-badge">TAP TO COPY</span>
+  </div>
+
+  <div class="features-strip">
+    <div class="feat">🗺️ Live Map</div>
+    <div class="feat">🔊 Voice Search</div>
+    <div class="feat">🆘 SOS Emergency</div>
+    <div class="feat">🧭 Directions</div>
+    <div class="feat">🌤️ Weather</div>
+    <div class="feat">🗓️ Trip Planner</div>
+    <div class="feat">📡 Works Offline</div>
+    <div class="feat">100% Free</div>
+  </div>
+</div>
+
+<!-- PLATFORM CARDS -->
+<div class="platforms">
+
+  <!-- ANDROID -->
+  <div class="platform-card featured">
+    <span class="platform-icon">🤖</span>
+    <div class="platform-name">Android</div>
+    <p class="platform-desc">Install as a real app on your Android phone — works offline, adds to home screen.</p>
+    <div class="platform-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Open the app link in <strong>Chrome</strong></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Tap the <strong>⋮ menu</strong> (top right)</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Tap <strong>"Add to Home Screen"</strong></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Tap <strong>Add</strong> — installed! ✅</div></div>
+    </div>
+    <a href="https://singharnavkumar372-cloud.github.io/nearme-app" target="_blank" class="dl-btn green">📱 Open in Chrome → Install</a>
+    <div style="margin-top:10px;font-size:.72rem;color:#6b7280;text-align:center">Or download APK below ↓</div>
+  </div>
+
+  <!-- iPHONE -->
+  <div class="platform-card">
+    <span class="platform-icon">🍎</span>
+    <div class="platform-name">iPhone / iPad</div>
+    <p class="platform-desc">Add NearMe to your home screen in Safari — works like a native app.</p>
+    <div class="platform-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Open the link in <strong>Safari</strong> (not Chrome)</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Tap the <strong>Share button</strong> (box with arrow ↑)</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Scroll down → tap <strong>"Add to Home Screen"</strong></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Tap <strong>Add</strong> — app installed! ✅</div></div>
+    </div>
+    <a href="https://singharnavkumar372-cloud.github.io/nearme-app" target="_blank" class="dl-btn">🍎 Open in Safari → Install</a>
+  </div>
+
+  <!-- DESKTOP -->
+  <div class="platform-card">
+    <span class="platform-icon">💻</span>
+    <div class="platform-name">Windows / Mac / Linux</div>
+    <p class="platform-desc">Install NearMe as a desktop app — runs in its own window, no browser needed.</p>
+    <div class="platform-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text">Open the link in <strong>Chrome or Edge</strong></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Click the <strong>install icon ⊕</strong> in the address bar</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Click <strong>Install</strong> — done! ✅</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Find <strong>NearMe</strong> in your Start menu / Launchpad</div></div>
+    </div>
+    <button class="dl-btn" onclick="installPWA()">💻 Install Desktop App</button>
+  </div>
+
+</div>
+
+<!-- APK DOWNLOAD via PWABuilder -->
+<div class="pwabuilder-section">
+  <div class="pwabuilder-card">
+    <div style="font-size:2.5rem;margin-bottom:12px;">📦</div>
+    <h2>Download Real Android APK</h2>
+    <p>Generate a real <strong>.apk</strong> file you can install directly on any Android phone — no Play Store needed. Uses Microsoft PWABuilder (free, trusted tool).</p>
+
+    <div class="url-box" id="app-url-box">https://singharnavkumar372-cloud.github.io/nearme-app</div>
+
+    <div class="pwa-steps">
+      <div class="pwa-step">
+        <div class="pwa-step-num">1</div>
+        <div class="pwa-step-text">Click <strong>"Generate APK"</strong> button below</div>
+      </div>
+      <div class="pwa-step">
+        <div class="pwa-step-num">2</div>
+        <div class="pwa-step-text">PWABuilder opens → click <strong>"Package for Stores"</strong></div>
+      </div>
+      <div class="pwa-step">
+        <div class="pwa-step-num">3</div>
+        <div class="pwa-step-text">Select <strong>Android</strong> → click <strong>Download</strong> → get your <strong>.apk file</strong></div>
+      </div>
+      <div class="pwa-step">
+        <div class="pwa-step-num">4</div>
+        <div class="pwa-step-text">Transfer to phone → tap to install → <strong>NearMe is on your phone!</strong></div>
+      </div>
+    </div>
+
+    <a href="https://www.pwabuilder.com/?url=https://singharnavkumar372-cloud.github.io/nearme-app"
+       target="_blank" class="dl-btn green" style="font-size:.9rem;padding:14px">
+      📦 Generate APK (Free) →
+    </a>
+
+    <p style="font-size:.72rem;color:#555575;margin-top:12px;">Powered by Microsoft PWABuilder · 100% free · No account needed</p>
+  </div>
+</div>
+
+<!-- QR CODE -->
+<div class="qr-section">
+  <div class="qr-card">
+    <div class="qr-title">📷 Scan to Open on Phone</div>
+    <div class="qr-sub">Point your phone camera at this QR code</div>
+    <div class="qr-code">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://singharnavkumar372-cloud.github.io/nearme-app&color=6c63ff&bgcolor=ffffff"
+           alt="NearMe QR Code" onerror="this.parentElement.innerHTML='📱'"/>
+    </div>
+    <div style="font-size:.76rem;color:#6b7280;">singharnavkumar372-cloud.github.io/nearme-app</div>
+  </div>
+</div>
+
+<div id="toast">✅ Link copied!</div>
+
+<script>
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(r => {
+      if (r.outcome === 'accepted') showToast('🎉 NearMe installed!');
+      deferredPrompt = null;
+    });
+  } else {
+    window.open('https://singharnavkumar372-cloud.github.io/nearme-app', '_blank');
+    showToast('Open in Chrome/Edge and click the install icon in address bar');
+  }
+}
+
+function copyUrl() {
+  const url = 'https://singharnavkumar372-cloud.github.io/nearme-app';
+  navigator.clipboard?.writeText(url).then(() => showToast('✅ Link copied!'))
+    .catch(() => {
+      const el = document.createElement('textarea');
+      el.value = url; document.body.appendChild(el);
+      el.select(); document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast('✅ Link copied!');
+    });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 3000);
+}
+</script>
+</body>
+</html>
